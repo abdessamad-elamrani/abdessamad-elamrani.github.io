@@ -52,6 +52,12 @@ author_work_experiences:
   designation: CFTS Level 3 Engineer
   description: Escalation Engineer for various Juniper Golden Telco in EMEA Region
   visibility: true
+- company_name: Huawei Technologies
+  company_logo: huawei.jpeg
+  company_url: https://huawei.com
+  designation: DataCom Team Lead, IP/MPLS Expert
+  description: Lead the IP/MPLS Datacom Operations/Maint Team, Design Solutions and Confirm HLD/LLD before Deployement. Ensure the safety of network, Implementations of Rectifications.
+  visibility: true
 
 # Education
 author_education_details:
