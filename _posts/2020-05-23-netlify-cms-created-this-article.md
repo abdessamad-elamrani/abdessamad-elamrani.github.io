@@ -1,10 +1,11 @@
 ---
+published: false
 layout: post
-author: johndoe
+author: abde
 title: Netlify CMS created this Article
 date: 2020-05-23T09:52:20.613Z
 thumbnail: /assets/img/posts/hello.jpg
-category: jekyll
+category: abde
 summary: Demo Content using Netlify CMS
 keywords: using netlify cms with devlopr-jekyll, devlopr jekyll netlify cms, how to use netlify cms
 permalink: /blog/using-netlify-cms/
