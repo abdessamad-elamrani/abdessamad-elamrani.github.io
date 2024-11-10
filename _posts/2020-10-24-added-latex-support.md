@@ -1,8 +1,9 @@
 ---
+published: false
 layout: post
 title:  "Added Latex Support"
 summary: Writing Equations using Latex
-author: xplor4r
+author: abde
 date: '2020-10-24 10:35:23 +0530'
 category: jekyll
 thumbnail: /assets/img/posts/code.jpg
