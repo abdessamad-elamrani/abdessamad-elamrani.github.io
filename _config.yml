@@ -1,10 +1,11 @@
 # Site Settings
-title: "Abdessamad EL AMRANI - Cloud & Security Engineering"
-subtitle: "Cloud Security | DevSecOps | Network Architecture"
-description: >- 
-  Senior Cloud Security Engineer specializing in DevSecOps, Kubernetes, Cloud Architecture, 
-  and Network Security. Sharing insights on cybersecurity, cloud native technologies, 
-  and modern infrastructure solutions.
+title: "Abde EL AMRANI - CyberSec , Cloud & AI Expert & Keynote Speaker"
+subtitle: "Cloud | Cyber Security | DevSecOps | AI | Network Engineerig"
+description: >-
+  Cyber Security, Cloud & AI Engineering expert & Keynote Speaker, specializing
+  in DevSecOps, Kubernetes, Cloud Architecture, Aritifical Inteligence and
+  Network Security. Sharing insights on cybersecurity, cloud native
+  technologies,  and modern infrastructure solutions.
 url: "https://abdes.net"
 baseurl: ""
 
@@ -12,9 +13,10 @@ baseurl: ""
 author_logo: profile.png
 author: "Abdessamad EL AMRANI"
 author_bio: >-
-  Senior Cloud Security Engineer with expertise in cybersecurity, cloud architecture, 
-  and network infrastructure. Currently working with Fortinet's Tiger team, focusing 
-  on innovative security solutions and cloud-native technologies.
+  Senior Cloud Security Engineer with expertise in cybersecurity, cloud
+  architecture,  and network infrastructure. Currently working with Fortinet's
+  Tiger team, focusing  on innovative security solutions and cloud-native
+  technologies.
 author_email: "elamrani.abdessamad@gmail.com"
 author_location: "Amsterdam, The Netherlands"
 author_website_url: "https://abdes.net"
@@ -28,17 +30,18 @@ author_work_experiences:
   company_url: "https://fortinet.com"
   designation: "Senior Consulting Systems Engineer (Tiger Team)"
   description: >-
-    Leading member of Fortinet's elite Tiger team, specializing in complex security architectures,
-    cloud-native solutions, and AI/ML-driven security innovations. Driving technical strategy
-    and product development while providing expert consultation on cybersecurity solutions.
+    Leading member of Fortinet's elite Tiger team, specializing in complex
+    security architectures, cloud-native solutions, and AI/ML-driven security
+    innovations. Driving technical strategy and product development while
+    providing expert consultation on cybersecurity solutions.
   visibility: true
 - company_name: "Palo Alto Networks"
   company_logo: paloalto.png
   company_url: "https://paloaltonetworks.com"
   designation: "Senior Escalation Engineer"
   description: >-
-    Led critical escalations for enterprise security solutions, specializing in cloud
-    security and network infrastructure challenges.
+    Led critical escalations for enterprise security solutions, specializing in
+    cloud security and network infrastructure challenges.
   visibility: true
 - company_name: "Juniper Networks"
   company_logo: juniper.png
