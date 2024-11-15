@@ -20,9 +20,12 @@ author_bio: >-
 author_email: "elamrani.abdessamad@gmail.com"
 author_location: "Amsterdam, The Netherlands"
 author_website_url: "https://abdes.net"
-typewrite-text: "Securing the Cloud | Building the AI | Sharing Knowledge |
-  Talking to the world"
-hero_cover_img: sample_cover.jpg
+#typewrite-text: "Securing the Cloud | Building the AI | Sharing Knowledge |
+#  Talking to the world"
+typewrite-text: "Scroll Down for Industry & Tech Updates "
+#hero_cover_img: sample_cover.jpg
+#hero_cover_img: cover-abde.jpg
+hero_cover_img: main-cover1.jpg
 
 # Professional Experience
 author_work_experiences:
@@ -59,10 +62,8 @@ urls:
   url: /
 - text: About
   url: /about
-- text: Blog
+- text: Tech&News
   url: /blog
-- text: Projects
-  url: /projects
 - text: Contact
   url: /contact
 

@@ -1,44 +1,89 @@
 <section id="recent-articles">
   <div id="recent-articles-header">
     <div id="recent-articles-title">
-      <h1 class="card-title"> my recent events from 2023/2024 as Speaker</h1>
+      <h1 class="card-title">See all posts in blog style</h1>
     </div>
     <div id="recent-articles-show-all">
-      <a class="btn btn-lg btn-dark" href="/blog"> View All </a>
+      <a class="btn btn-lg btn-dark" href="/blog">View All</a>
     </div>
   </div>
   <br />
 
-  <ul>
-    {% for post in site.posts limit:5 %}
-    <li class="article-card">
-      <a href="{{post.url}}" class="article-card-link">
-        <div id="article-container">
-          <div id="article-img">
-            {% if post.author %}
-              {% assign author = post.author %}
-              {% if author %}
-               {% assign author_data = site.data.authors[author] %}
-               <img
-                src="{{site.url}}{{site.baseurl}}/assets/img/authors/{{author_data.avatar}}"
-                width="50px"
-                height="50px"
-             />
-              {% endif %}
-            {% endif %}
+  <div class="row">
+    <!-- Left Column for 'Keynote Speaker Events' -->
+    <div class="col-md-6">
+      <h2 style="font-size: 1.75em; font-weight: bold; color: #333;">Keynote Speaker Events</h2>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.category contains 'events' %}
+            <li class="article-card">
+              <a href="{{ post.url }}" class="article-card-link">
+                <div id="article-container">
+                  <div id="article-img">
+                    {% if post.author %}
+                      {% assign author = post.author %}
+                      {% if author %}
+                        {% assign author_data = site.data.authors[author] %}
+                        <img
+                          src="{{ site.url }}{{ site.baseurl }}/assets/img/authors/{{ author_data.avatar }}"
+                          width="50px"
+                          height="50px"
+                        />
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <div id="article-link">
+                    <p class="recent-article-link">{{ post.title }} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
+                  </div>
+                  <div id="article-alert">
+                    {% for cat in post.category limit:1 %}
+                      <button class="btn btn-sm btn-dark">{{ cat }}</button>
+                    {% endfor %}
+                  </div>
+                </div>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
 
-          </div>
-          <div id="article-link">
-              <p class="recent-article-link">{{post.title}} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
-            </div>
-            <div id="article-alert">
-            {% for cat in post.category limit:1 %}
-             <button class="btn btn-sm btn-dark">{{cat}}</button>
-            {% endfor %}
-            </div>
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+    <!-- Right Column for 'Technical Writeups' -->
+    <div class="col-md-6">
+      <h2 style="font-size: 1.75em; font-weight: bold; color: #333;">Technical Writeups</h2>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.category contains 'tech' %}
+            <li class="article-card">
+              <a href="{{ post.url }}" class="article-card-link">
+                <div id="article-container">
+                  <div id="article-img">
+                    {% if post.author %}
+                      {% assign author = post.author %}
+                      {% if author %}
+                        {% assign author_data = site.data.authors[author] %}
+                        <img
+                          src="{{ site.url }}{{ site.baseurl }}/assets/img/authors/{{ author_data.avatar }}"
+                          width="50px"
+                          height="50px"
+                        />
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <div id="article-link">
+                    <p class="recent-article-link">{{ post.title }} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
+                  </div>
+                  <div id="article-alert">
+                    {% for cat in post.category limit:1 %}
+                      <button class="btn btn-sm btn-dark">{{ cat }}</button>
+                    {% endfor %}
+                  </div>
+                </div>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </section>
