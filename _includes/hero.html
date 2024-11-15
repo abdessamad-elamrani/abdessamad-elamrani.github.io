@@ -3,16 +3,29 @@
   .jumbotron {
     background-color: var(--main-background-color) !important;
     background-image: url('/assets/img/{{site.hero_cover_img}}');
-    text-align: center;
+    text-align: left; /* Align text to the left for better readability */
     background-attachment: fixed;
     background-size: cover; /* or try 'contain' */
     background-position: center;
     min-height: 100vh; /* Ensures the jumbotron takes full viewport height */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row; /* Change to row to align items horizontally */
+    justify-content: flex-end; /* Align items to the right */
     align-items: center;
-}
+    padding: 20px; /* Add some padding for better spacing */
+  }
+
+  .jumbotron-content {
+    width: 40%; /* Set the width to 40% of the screen */
+    margin-top: 60px;
+    margin-right: 20px; /* Add some margin to the right */
+    font-size: 1.5em; /* Increase the font size */
+    text-align: left; /* Ensure text is left-aligned within the box */
+    
+    
+    color: #000000;
+  }
+
   .jumbotron-btns {
     display: block;
     margin-top: 50px;
@@ -21,13 +34,20 @@
   .jumbotron-heading, .lead {
     color: #000000;
   }
-  </style>
-  
-  <!-- home hero section -->
-  <div class="jumbotron">
-    <img class="author-profile-img" src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}" />
-    <p class="jumbotron-heading">Hi, I am {{site.author}} !</p>
-  
+</style>
+
+<!-- home hero section -->
+<div class="jumbotron">
+
+  <div class="jumbotron-content">
+    <!--<img class="author-profile-img" src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}" /> -->
+    <!-- <p class="jumbotron-heading">Hi, I am {{site.author}} !</p> -->
+
+    <p class="lead">Abde is a tech enthusiast with over 15 years of experience in Cybersecurity, Cloud, DevSecOps, and AI/ML. He has contributed to leading companies like Palo Alto Networks, Fortinet, Juniper Networks, Huawei, and Nokia, playing a pivotal role in designing and securing technology for millions.
+
+      As a technologist at heart, Abde enjoys exploring the intricacies of technology. He is also a seasoned leader, having successfully guided several tech businesses as CEO/Co-CEO toward innovation. A frequent speaker at industry events, Abde shares insights from his extensive experience, demonstrating his commitment to technical excellence and thought leadership.
+    </p>
+
     <p class="lead" id="typewriteText"></p>
     <span>
       {%- include github_fork_button.html -%}
@@ -42,3 +62,4 @@
       </a>
     </div>
   </div>
+</div>

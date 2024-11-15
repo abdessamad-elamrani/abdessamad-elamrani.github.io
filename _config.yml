@@ -10,7 +10,10 @@ url: "https://abdes.net"
 baseurl: ""
 
 # Author Details
-author_logo: profile.png
+#
+# author_logo: profile.png
+# temporary removig round pic
+author_logo: no_logo_round.png
 author: "Abdessamad EL AMRANI"
 author_bio: >-
   Senior Cloud Security Engineer with expertise in cybersecurity, cloud
@@ -62,7 +65,7 @@ urls:
   url: /
 - text: About
   url: /about
-- text: Tech&News
+- text: News&Tech
   url: /blog
 - text: Contact
   url: /contact
