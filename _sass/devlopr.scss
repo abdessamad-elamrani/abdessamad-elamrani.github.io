@@ -964,6 +964,9 @@ footer {
       .jumbotron {
           padding: 10rem 1rem !important;
       }
+      .jumbotron-content {
+        font-size: 0.5em; /* Decrease text size to 50% */
+         }
 
 }
 
@@ -1032,6 +1035,9 @@ footer {
             .product{
                 width: auto;
                 float:left;
+            }
+            .jumbotron-content {
+                font-size: 0.5em; /* Decrease text size to 50% */
             }
  }
 
