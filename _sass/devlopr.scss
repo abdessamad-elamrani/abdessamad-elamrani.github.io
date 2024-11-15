@@ -884,6 +884,10 @@ footer {
             .jumbotron {
                 padding: 10rem 1rem !important;
             }
+            .jumbotron-content {
+                font-size: 0.1em; /* Decrease text size to 50% */
+              }
+        
 
 }
 
@@ -965,8 +969,8 @@ footer {
           padding: 10rem 1rem !important;
       }
       .jumbotron-content {
-        font-size: 0.5em; /* Decrease text size to 50% */
-         }
+        font-size: 0.1em; /* Decrease text size to 50% */
+      }
 
 }
 
@@ -1037,7 +1041,7 @@ footer {
                 float:left;
             }
             .jumbotron-content {
-                font-size: 0.5em; /* Decrease text size to 50% */
+                font-size: 0.1em; /* Decrease text size to 50% */
             }
  }
 
