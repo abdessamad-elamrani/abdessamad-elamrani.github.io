@@ -532,10 +532,13 @@ header {
 }
 
 .lead {
-    font-size: 1.60rem !important;
+    font-size: 1.30rem !important;
     font-weight: 600;
-
 }
+.lead strong {
+    font-weight: 700; /* or use 'bold' */
+}
+
 
 .fa {
     display: inline-block;
