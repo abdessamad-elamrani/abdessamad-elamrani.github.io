@@ -1,21 +1,20 @@
 <style>
-  /* change cover_img in config.yml */
   .jumbotron {
     background-color: var(--main-background-color) !important;
     background-image: url('/assets/img/{{site.hero_cover_img}}');
     text-align: center;
-    background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    justify-content: flex-end; /* Align items to the right */
     display: flex;
-}
+    justify-content: flex-end; /* Default for larger screens */
+    align-items: center;
+    min-height: 500px;
+    padding: 2rem;
+  }
 
   .jumbotron-content {
-    width: 40%; /* Set the width to 40% of the screen */
-    text-align: left; /* Ensure text is left-aligned within the box */
-    
-    
+    width: 40%; /* Default width for larger screens */
+    text-align: left;
     color: #000000;
   }
 
@@ -23,12 +22,33 @@
     display: block;
     margin-top: 50px;
   }
-  
+
   .jumbotron-heading, .lead {
     color: #000000;
   }
-  
-  
+
+
+  /* Media query for smartphones */
+  @media (max-width: 400px) {
+    .jumbotron {
+      background-attachment: scroll !important;
+      min-height: 300px;
+      padding: 1rem; /* Adjust padding for smaller screens */
+      justify-content: center; /* Center content on mobile */
+      background-size: 200%; /* Increase the size to make it appear smaller (zoomed out) */
+      background-position: center; /* Ensure the image is centered */
+      background-repeat: no-repeat; 
+      
+    }
+    .jumbotron-content {
+      width: 90%; /* Use a larger width for better readability on mobile */
+      font-size: 0.9em; /* Adjust font size for readability */
+    }
+    .lead {
+      font-size: 0.9rem !important;
+      font-weight: 700;
+    }
+  }
 </style>
 
 <!-- home hero section -->
@@ -47,8 +67,10 @@
       Either as Consultant, Escalation Engineer, CSO, or CEO, he has led many tech businesses to innovation and success.<br>
       <br>
       Abde is also a frequent speaker at industry events, sharing insights and demonstrating his commitment to technical mastery and thought leadership.
-  
+    </p>
+
     <br>
+    
 
     <p class="lead" id="typewriteText"></p>
     <span>
