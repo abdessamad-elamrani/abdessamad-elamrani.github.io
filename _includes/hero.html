@@ -34,18 +34,19 @@
       background-attachment: scroll !important;
       min-height: 300px;
       padding: 1rem; /* Adjust padding for smaller screens */
-      justify-content: center; /* Center content on mobile */
-      background-size: 200%; /* Increase the size to make it appear smaller (zoomed out) */
-      background-position: center; /* Ensure the image is centered */
+      justify-content: flex-end; /* Align content to the right on mobile */
+      align-items: flex-start; /* Align content to the top on mobile */
+      background-size: 300%; /* Increase the size to make it appear smaller (zoomed out) */
+      background-position: top; /* Ensure the image is centered */
       background-repeat: no-repeat; 
       
     }
     .jumbotron-content {
-      width: 90%; /* Use a larger width for better readability on mobile */
-      font-size: 0.9em; /* Adjust font size for readability */
+      width: 65%; /* Use a larger width for better readability on mobile */
+      font-size: 0.7em; /* Adjust font size for readability */
     }
     .lead {
-      font-size: 0.9rem !important;
+      font-size: 0.7rem !important;
       font-weight: 700;
     }
   }
@@ -58,7 +59,7 @@
     <!--<img class="author-profile-img" src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}" /> -->
     <!-- <p class="jumbotron-heading">Hi, I am {{site.author}} !</p> -->
 
-    <p class="lead">
+    <p class=lead>
       
       Abde is a tech industry technologist  with over 16 years experience and hands-on in the CyberSecurity, Cloud, Network, and ML/AI / Software industries.
       <br><br>
