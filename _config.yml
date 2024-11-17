@@ -28,7 +28,7 @@ author_website_url: "https://abdes.net"
 typewrite-text: "Scroll Down for Industry & Tech Updates "
 #hero_cover_img: sample_cover.jpg
 #hero_cover_img: cover-abde.jpg
-hero_cover_img: main-cover1_lens.jpg
+home_background_image: main-cover1_lens.jpg
 
 # Professional Experience
 author_work_experiences:
@@ -63,10 +63,10 @@ author_work_experiences:
 urls:
 - text: Home
   url: /
-- text: About
-  url: /about
 - text: News&Tech
   url: /blog
+- text: About Abde
+  url: /about
 - text: Contact
   url: /contact
 

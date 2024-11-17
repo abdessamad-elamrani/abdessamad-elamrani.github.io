@@ -1,99 +1,91 @@
-<style>
-  .jumbotron {
-    background-color: var(--main-background-color) !important;
-    background-image: url('/assets/img/{{site.hero_cover_img}}');
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: flex-end; /* Default for larger screens */
-    align-items: center;
-    min-height: 500px;
-    padding: 2rem;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Jumbotron</title>
+    <style>
+        .jumbotron {
+            position: relative;
+            display: flex;
+            justify-content: center; /* Center the image container */
+            width: 100%;
+            background-color: var(--main-background-color);
+            padding: 0;
+            overflow: hidden;
+        }
 
-  .jumbotron-content {
-    width: 40%; /* Default width for larger screens */
-    text-align: left;
-    color: #000000;
-    
-  }
+        .jumbotron-image-container {
+            position: relative;
+            width: fit-content; /* Will match image width */
+            max-width: 100%; /* Prevent overflow */
+        }
 
-  .jumbotron-btns {
-    display: block;
-    margin-top: 50px;
-  }
+        .jumbotron-image {
+            display: block; /* Remove any default spacing */
+            max-width: 100%;
+            height: auto;
+        }
 
-  .jumbotron-heading, .lead {
-    color: #000000;
-  }
+        .jumbotron-content {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 2;
+            width: min(35%, 500px);
+            text-align: left;
+            color: #000000;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+        }
 
+        .jumbotron-btns {
+            margin-top: 20px;
+        }
 
-  /* Media query for smartphones */
-  @media (max-width: 500px) {
-    .navbar-brand {
-      margin-left: 5%; /* Adjust the percentage as needed */
-    }
-    .jumbotron {
-      background-attachment: scroll !important;
-      min-height: 300px;
-      padding: 1rem; /* Adjust padding for smaller screens */
-      justify-content: flex-end; /* Align content to the right on mobile */
-      align-items: flex-start; /* Align content to the top on mobile */
-      background-size: 300%; /* Increase the size to make it appear smaller (zoomed out) */
-      background-position: top; /* Ensure the image is centered */
-      background-repeat: no-repeat; 
-      
-    }
-    .jumbotron-content {
-      width: 65%; /* Use a larger width for better readability on mobile */
-      font-size: 0.7em; /* Adjust font size for readability */
-    }
-    .lead {
-      font-size: 1rem !important;
-      font-weight: 700;
-    }
-  }
-</style>
+        .jumbotron-heading, .lead {
+            color: #000000;
+        }
 
-<!-- home hero section -->
-<div class="jumbotron">
-
-  <div class="jumbotron-content">
-    <!--<img class="author-profile-img" src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}" /> -->
-    <!-- <p class="jumbotron-heading">Hi, I am {{site.author}} !</p> -->
-
-    <p class=lead>
-      
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <strong>Abde</strong> is a <strong>tech industry technologist , consultant ex-CEO, and keynote speaker</strong>  .
-      <br><br>
-      Abde worked last 16 years for top vendors in the cybersec/cloud/network space : <strong>Juniper Networks, Huawei, Palo Alto Networks and Fortinet</strong>.<br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-    </p>
-
-    <br>
-  
-    <p class="lead" id="typewriteText"></p>
-    <span>
-      {%- include github_fork_button.html -%}
-    </span>
-    <!-- uncomment/modify buttons as you want-->
-    <div class="jumbotron-btns">
-      <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
-        <button class="btn btn-md btn-warning"> <strong>LinkedIn</strong> </button>
-      </a>
-      <a href="https://github.com/abdessamad-elamrani" target="_blank">
-        <button class="btn btn-md btn-warning"> <strong>GitHub</strong> </button>
-      </a>
+        @media (max-width: 768px) {
+            .jumbotron {
+                flex-direction: column;
+            }
+            
+            .jumbotron-image-container {
+                width: 100%;
+            }
+            
+            .jumbotron-content {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 90%;
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="jumbotron-image-container">
+            <img class="jumbotron-image" src="/assets/img/{{site.home_background_image}}" alt="Background">
+            <div class="jumbotron-content">
+                <p class="lead">
+                    <strong>Abde</strong> is a <strong>tech industry technologist, consultant ex-CEO, and keynote speaker</strong>.
+                    <br><br>
+                    Abde worked last 16 years for top vendors in the cybersec/cloud/network space: <strong>Juniper Networks, Huawei, Palo Alto Networks, and Fortinet</strong>.
+                </p>
+                <div class="jumbotron-btns">
+                    <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
+                        <button class="btn btn-md btn-warning"> <strong>LinkedIn</strong> </button>
+                    </a>
+                    <a href="https://github.com/abdessamad-elamrani" target="_blank">
+                        <button class="btn btn-md btn-warning"> <strong>GitHub</strong> </button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+</body>
+</html>

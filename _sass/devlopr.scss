@@ -15,7 +15,7 @@ html[data-theme="dark"] {
     --link-color: #000000; /* Changed from rgb(0, 112, 201) */
     /* --link-color: rgb(0, 112, 201); */
     --link-color-visited: hsl(0, 0%, 0%);
-    --main-background-color: rgb(195, 195, 195);
+    --main-background-color: transparent; 
     --main-text-color: rgb(149, 83, 83);  /*abde color for menu, and other stuffs*/
     --medium-text-color: hsl(0, 0%, 100%); /*abde color for menu, and other stuffs*/
     --sidebar-color: hsl(0, 0%, 90%);
@@ -252,7 +252,8 @@ header {
 }
 
 #navbar-hamburger, #navbar-search{
-    color: var(--bold-color) !important;
+    /*color: var(--bold-color) !important;*/
+    color:rgb(195, 195, 195);
 }
 
 .navbar-dark .navbar-brand {
@@ -557,7 +558,7 @@ header {
 }
 
 .lead {
-    font-size: 1.50rem !important; 
+    font-size: 1.30rem !important; 
 
 }
 
@@ -837,7 +838,8 @@ footer {
          header {
               height: auto;
               text-align: center;
-              background-color: var(--main-background-color);
+              background: linear-gradient(to right, rgb(103, 2, 2), rgb(182, 0, 0)) !important;
+              /* Remove or comment out any other background-color definitions */
               box-shadow:0px;
               height: auto;
               width: 100%;
@@ -916,7 +918,7 @@ footer {
     header {
         height: auto;
         text-align: center;
-        background-color: var(--main-background-color);
+        background: linear-gradient(to right, rgb(103, 2, 2), rgb(182, 0, 0)) !important;
         box-shadow:0px;
         height: auto;
         width: 100%;
@@ -1000,7 +1002,7 @@ footer {
 
         /*Header Navigation */
         header {
-            background-color: var(--main-background-color);
+            background: linear-gradient(to right, rgb(103, 2, 2), rgb(182, 0, 0)) !important;
             box-shadow:0px;
             height: auto;
             width: 100%;
