@@ -3,7 +3,8 @@
   <div class="row">
     <!-- Left Column for 'Keynote Speaker Events' -->
     <div class="col-md-6" >
-      <h2 style="font-size: 1.75em; font-weight: bold; color: #333; margin-left: 5%;">keynote speaker events</h2>
+      <h2 style="font-size: 1.75em; font-weight: bold; color: #ffffff !important; margin-left: 10%;">keynote speaker events</h2>
+      <br>
       <ul>
         {% for post in site.posts %}
           {% if post.category contains 'events' %}
@@ -15,11 +16,7 @@
                       {% assign author = post.author %}
                       {% if author %}
                         {% assign author_data = site.data.authors[author] %}
-                        <img
-                          src="{{ site.url }}{{ site.baseurl }}/assets/img/authors/{{ author_data.avatar }}"
-                          width="50px"
-                          height="50px"
-                        />
+
                       {% endif %}
                     {% endif %}
                   </div>
@@ -41,8 +38,10 @@
 
     <!-- Right Column for 'Technical Writeups' -->
     <div class="col-md-6">
-      <h2 style="font-size: 1.75em; font-weight: bold; color: #333; margin-left: 5%;">technical write-ups</h2>
+      <h2 style="font-size: 1.75em; font-weight: bold; color: #ffffff !important;margin-left: 10%; ">technical write-ups</h2>
+      <br>
       <ul>
+      
         {% for post in site.posts %}
           {% if post.category contains 'tech' %}
             <li class="article-card">
