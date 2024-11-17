@@ -2,7 +2,7 @@
 layout: post
 title:  "European Executive Forum, 26th Feb 2024, Amsterdam The Netherlands"
 summary: "European Executive Forum, 26th Feb 2024, Amsterdam The Netherlands"
-author: abde
+author: abde-pulitzer
 date: '2024-02-26 14:35:23 +0530'
 category: events
 thumbnail: /assets/img/posts/2023-10-26-Pulitzer-EuropeanExecutiveForum/pic1.jpg
@@ -13,7 +13,10 @@ usemathjax: true
 
 `Strategic & Technological Innovation: Navigating the Future of Cybersecurity`
 
-
+<div style="text-align: center;">
+  <img src="/assets/img/authors/abde-pulitzer.png" alt="Going through some deep Fortigate flows" class="img-fluid">
+  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;"></p>
+</div>
 
 At the eSentire European Executive Forum held at the Pulitzer Hotel in Amsterdam, I had the privilege of participating as a speaker among senior leaders from MSPs across the Benelux region. The event, sponsored by eSentire and hosted by Phil Skelton, focused on the evolving cybersecurity landscape, emphasizing the integration of advanced technologies like AI and machine learning in Managed Detection and Response (MDR) services.
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Workshop Mouratoglou Hotel & Resort, Oct 13th-15th 2023 , France"
 summary: "Telco Workshop in Nice Sophia, Novotel"
-author: abde
+author: abde-fortinet
 date: '2023-10-05 14:35:23 +0530'
 category: events
 thumbnail: /assets/img/posts/2023-10-18-Mouratoglou-workshop/Day1-Abde_2.jpeg
