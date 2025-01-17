@@ -7,7 +7,7 @@ date: '2023-06-05 14:35:23 +0530'
 category: events
 thumbnail: /assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_03.jpg
 keywords: telco, 5g, security, 
-permalink: /blog/pulitzer-executive-feb2024/
+permalink: /blog/AIinEnergySector/
 usemathjax: true
 ---
 
