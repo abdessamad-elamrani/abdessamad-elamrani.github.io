@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Global Big Data Digital Transformation, Nov 2024, Amsterdam"
-summary: "Global Big Data Digital Transformation, Nov 2024, Amsterdams"
+summary: "Global Big Data Digital Transformation, Nov 2024, Amsterdam"
 author: abde-big-data
 date: '2024-11-22 14:35:23 +0530'
 category: events
-thumbnail: /assets/img/posts/2024-11-22-Global-Big-Data-and-Digital-Transformation-Forum/pic4.jpg
+thumbnail: /assets/img/posts/2024-11-22-Global-Big-Data-and-Digital-Transformation-Forum/pic4.jpeg
 keywords: bigdata, ML, AI
 permalink: /blog/Big-data-nov-2024/
 usemathjax: true
