@@ -4,7 +4,7 @@ title:  "Workshop France Novotel, Nov 5th-7th 2024"
 summary: "Workshop France Novotel, Nov 5th-7th 2024"
 author: abde-fortinet
 date: '2023-10-05 14:35:23 +0530'
-category: tech
+category: events
 thumbnail: /assets/img/posts/2024-11-05-Telco-Workshop-Nice-France/pic3.jpeg
 keywords: telco, 5g, security, 
 permalink: /blog/telco-workshop-nice-2024/
