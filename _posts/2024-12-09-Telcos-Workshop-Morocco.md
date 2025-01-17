@@ -4,7 +4,7 @@ title:  "Workshops to the Telcos in Morocco"
 summary: "Workshops to the Telcos in Morocco, Dec 9th-13th 2024"
 author: abde-fortinet
 date: '2024-12-09 14:35:23 +0530'
-category: tech
+category: events
 thumbnail: /assets/img/posts/2024-12-09-Telcos-workshop-Inwi-and-Orange-morocco-2024/pic1.jpeg
 keywords: telco, 5g, security, cloud , dpi 
 permalink: /blog/telcos-workshop-Inwi-and-Orange-morocco-2024/
