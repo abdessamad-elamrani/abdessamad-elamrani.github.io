@@ -30,6 +30,11 @@ typewrite-text: "Scroll Down for Industry & Tech Updates "
 #hero_cover_img: cover-abde.jpg
 home_background_image: main-cover1_lens.jpg
 
+# Include video files in build
+include:
+  - "assets/videos/"
+  - "assets/videos/*.mp4"
+
 # Professional Experience
 author_work_experiences:
 - company_name: "Fortinet"

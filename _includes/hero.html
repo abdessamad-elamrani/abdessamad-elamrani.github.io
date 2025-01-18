@@ -19,13 +19,17 @@
         .video-container {
             width: 30%;
             margin-right: 2rem;
+            min-height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: #f5f5f5;
         }
 
         .video-container video {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+            object-fit: cover;
         }
 
         .jumbotron-image-container {
@@ -68,6 +72,8 @@
             .video-container {
                 width: 100%;
                 margin-right: 0;
+                margin-bottom: 1rem;
+                min-height: 200px;
             }
             
             .jumbotron-image-container {
@@ -88,8 +94,13 @@
 <body>
     <div class="jumbotron">
         <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="/assets/videos/profile.mp4" type="video/mp4">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+            >
+                <source src="../assets/videos/profile_h264.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
