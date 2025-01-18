@@ -8,17 +8,30 @@
         .jumbotron {
             position: relative;
             display: flex;
-            justify-content: center; /* Center the image container */
+            justify-content: space-between; /* Changed to space-between for video and image */
+            align-items: center;
             width: 100%;
             background-color: var(--main-background-color);
-            padding: 0;
+            padding: 2rem;
             overflow: hidden;
+        }
+
+        .video-container {
+            width: 30%;
+            margin-right: 2rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .jumbotron-image-container {
             position: relative;
-            width: fit-content; /* Will match image width */
-            max-width: 100%; /* Prevent overflow */
+            width: 65%; /* Reduced from 100% to make room for video */
+            max-width: 800px; /* Limit maximum width */
         }
 
         .jumbotron-image {
@@ -52,8 +65,14 @@
                 flex-direction: column;
             }
             
+            .video-container {
+                width: 100%;
+                margin-right: 0;
+            }
+            
             .jumbotron-image-container {
                 width: 100%;
+                max-width: 100%;
             }
             
             .jumbotron-content {
@@ -68,6 +87,12 @@
 </head>
 <body>
     <div class="jumbotron">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="/assets/videos/profile.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div class="jumbotron-image-container">
             <img class="jumbotron-image" src="/assets/img/{{site.home_background_image}}" alt="Background">
             <div class="jumbotron-content">
