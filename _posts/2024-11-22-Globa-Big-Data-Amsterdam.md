@@ -12,7 +12,7 @@ usemathjax: true
 ---
 
 
-`Event Recap: Big Data Digital Transformation Nov 2024, Amsterdam, The Netherlands `
+`Event Recap : Big Data Digital Transformation Nov 2024, Amsterdam, The Netherlands `
 
 I’m thrilled to share that I recently had the opportunity to host an engaging workshop in Amsterdam, exploring the transformative power of Big Data, Machine Learning, and the latest applications of emerging technologies. 
 
