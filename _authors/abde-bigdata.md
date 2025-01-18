@@ -1,6 +1,6 @@
 ---
 name: Abde El Amrani
-username: abde-big-data
+username: abde-bigdata
 bio: "Hi I a Abde, a Network and CyberSecurity expert."
 site: https://abdes.net
 avatar: big-data-avatar.png
