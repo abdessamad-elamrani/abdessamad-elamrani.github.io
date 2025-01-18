@@ -4,6 +4,7 @@ layout: full-width
 
 <script>
   $(document).ready(function() {
+    // Initialize typewriter effect on specified element
     $("#typewriteText").typewrite({
       blinkingCursor: false,
       speed: 10,
@@ -12,15 +13,16 @@ layout: full-width
     });
   });
 </script>
-    <!-- hero section-->
-    {%- include hero.html -%}
-    <div class="col-lg-8 offset-md-2">
-      {%- include recent_articles.html -%}
-    </div>
 
+<!-- Hero section including the main banner image and introductory text -->
+{%- include hero.html -%}
 
-    <!-- Include the blog summary -->
-    <div class="col-lg-12">
-      {%- include blog_summary.html -%}
-    </div>
+<!-- Section for recent articles with a central alignment -->
+<div class="col-lg-8 offset-md-2">
+  {%- include recent_articles.html -%}
+</div>
 
+<!-- Blog summary section occupying full width -->
+<div class="col-lg-12">
+  {%- include blog_summary.html -%}
+</div>
