@@ -12,9 +12,9 @@
             align-items: center;
             width: 100%;
             background-color: var(--main-background-color);
-            padding: 1rem; /* Reduced from 2rem */
+            padding: 1rem 1rem 0 1rem; /* Remove bottom padding */
             overflow: hidden;
-            margin-bottom: 0.5rem; /* Significantly reduced bottom margin */
+            margin-bottom: 0; /* Remove bottom margin */
         }
 
         .video-container {
@@ -71,8 +71,12 @@
         }
 
         .container-fluid {
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 0; /* Remove container padding */
+        }
+
+        #recent-articles {
+            margin-top: 0; /* Remove top margin from articles section */
+            padding-top: 0; /* Remove top padding from articles section */
         }
 
         @media (max-width: 768px) {
@@ -106,12 +110,12 @@
     <div class="jumbotron">
         <div class="video-container">
             <video 
+                id="profile-video"
                 autoplay 
                 muted 
-                loop 
                 playsinline
             >
-                <source src="../assets/videos/profile_h264.mp4" type="video/mp4">
+                <source src="../assets/videos/newvideo_h264.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -134,5 +138,14 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('profile-video');
+            // When video ends, pause it on the last frame
+            video.addEventListener('ended', function() {
+                video.pause();
+            });
+        });
+    </script>
 </body>
 </html>
