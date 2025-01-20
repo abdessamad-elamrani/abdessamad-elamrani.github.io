@@ -35,6 +35,49 @@ include:
   - "assets/videos/"
   - "assets/videos/*.mp4"
 
+# Analytics and Tracking
+google_analytics: G-PJ4G57RVDP
+wakatime_username: abdessamad-elamrani
+
+# Contact Form
+formspree_email: elamrani.abdessamad@gmail.com
+
+# Site Features Configuration
+show_author_work_experiences: true
+show_author_education_details: false
+show_author_project_details: true
+
+# Blog Configuration
+paginate: 6
+per_page: 6
+paginate_path: "/blog/page/:num/"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-feed
+
+# Exclude Files/Folders
+exclude:
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/
+- README.md
+- CHANGELOG.md
+
+# Build Destination
+destination: ./build
+
 # Professional Experience
 author_work_experiences:
 - company_name: "Fortinet"
@@ -83,46 +126,3 @@ medium_username: # your-medium-handle
 
 # Comments System
 hyvor_talk_website_id: 476
-
-# Analytics and Tracking
-google_analytics: # your-ga-id
-wakatime_username: abdessamad-elamrani
-
-# Contact Form
-formspree_email: elamrani.abdessamad@gmail.com
-
-# Site Features Configuration
-show_author_work_experiences: true
-show_author_education_details: false
-show_author_project_details: true
-
-# Blog Configuration
-paginate: 6
-per_page: 6
-paginate_path: "/blog/page/:num/"
-
-# Build Settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-plugins:
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-sitemap
-- jekyll-feed
-
-# Exclude Files/Folders
-exclude:
-- .sass-cache/
-- .jekyll-cache/
-- gemfiles/
-- Gemfile
-- Gemfile.lock
-- node_modules/
-- vendor/
-- README.md
-- CHANGELOG.md
-
-# Build Destination
-destination: ./build
