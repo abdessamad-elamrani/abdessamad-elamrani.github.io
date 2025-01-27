@@ -32,27 +32,30 @@
     .hero-col-left {
       display: flex;
       flex-direction: column;
-      width: 17.4%;         /* Abde this is most critical layout value, as column right adjust automatically Adjust me to change left column width */
-      min-width: 250px;   /* Ensures C1 doesn’t get too narrow on small screens */
-      margin-right: 1rem; /* Spacing between C1 & C2 */
+      width: 17.4%;         
+      min-width: 200px;    /* Reduced from 250px to allow more flexibility */
+      margin-right: 1rem;
       box-sizing: border-box;
+      flex-shrink: 1;      /* Allow the column to shrink */
     }
 
     /* The container holding the embedded video in C1 */
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      min-height: 224px;
+      padding-top: 150%;    /* 16:9 aspect ratio (9/16 = 0.5625) */
       border-radius: 8px;
       overflow: hidden;
       position: relative;
     }
     /* Actual video element (cover entire .video-container area) */
     .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     /* Description box in C1, under the video */
@@ -123,7 +126,7 @@
     }
     @media (max-width: 768px) {
       .video-container {
-        min-height: 180px;
+        padding-top: 45%; /* 4:3 aspect ratio (3/4 = 0.75) */
       }
     }
     @media (max-width: 576px) {
