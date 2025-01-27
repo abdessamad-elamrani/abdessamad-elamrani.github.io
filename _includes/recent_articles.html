@@ -1,9 +1,8 @@
 <section id="recent-articles">
-
   <div class="row">
     <!-- Left Column for 'Keynote Speaker Events' -->
-    <div class="col-md-6" >
-      <h2 style="font-size: 1.75em; font-weight: bold; color: #ffffff !important; margin-left: 10%;">keynote speaker events</h2>
+    <div class="col-md-4">
+      <h2 style="font-size: 1.4em; font-weight: bold; color: #ffffff !important; margin-left: 10%;">Keynote Speaker Events</h2>
       <br>
       <ul>
         {% for post in site.posts %}
@@ -27,11 +26,6 @@
                   <div id="article-link">
                     <p class="recent-article-link">{{ post.title }} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
                   </div>
-                  <div id="article-alert">
-                    {% for cat in post.category limit:1 %}
-                      <button class="btn btn-sm btn-dark">{{ cat }}</button>
-                    {% endfor %}
-                  </div>
                 </div>
               </a>
             </li>
@@ -40,12 +34,11 @@
       </ul>
     </div>
 
-    <!-- Right Column for 'Technical Writeups' -->
-    <div class="col-md-6">
-      <h2 style="font-size: 1.75em; font-weight: bold; color: #ffffff !important;margin-left: 10%; ">technical write-ups</h2>
+    <!-- Middle Column for 'Technical Writeups' -->
+    <div class="col-md-4">
+      <h2 style="font-size: 1.4em; font-weight: bold; color: #ffffff !important; margin-left: 10%;">Technical Write-Ups</h2>
       <br>
       <ul>
-      
         {% for post in site.posts %}
           {% if post.category contains 'tech' %}
             <li class="article-card">
@@ -67,11 +60,6 @@
                   <div id="article-link">
                     <p class="recent-article-link">{{ post.title }} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
                   </div>
-                  <div id="article-alert">
-                    {% for cat in post.category limit:1 %}
-                      <button class="btn btn-sm btn-dark">{{ cat }}</button>
-                    {% endfor %}
-                  </div>
                 </div>
               </a>
             </li>
@@ -80,15 +68,38 @@
       </ul>
     </div>
 
-    <div id="recent-articles-header">
-      <!--
-      <div id="recent-articles-title">
-        <h1 class="card-title">See all posts in blog style</h1>
-      </div>
-      -->
-      <div id="recent-articles-show-all">
-        <a class="btn btn-lg btn-dark" href="/blog">View All</a>
-      </div>
+    <!-- Right Column for 'Animation' -->
+    <div class="col-md-4">
+      <h2 style="font-size: 1.4em; font-weight: bold; color: #ef9c16 !important; margin-left: 10%;">Technology Animated (new) </h2>
+      <br>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.category contains 'animation' %}
+            <li class="article-card">
+              <a href="{{ post.url }}" class="article-card-link">
+                <div id="article-container">
+                  <div id="article-img">
+                    {% if post.author %}
+                      {% assign author = post.author %}
+                      {% if author %}
+                        {% assign author_data = site.data.authors[author] %}
+                        <img
+                          src="{{ site.url }}{{ site.baseurl }}/assets/img/authors/{{ author_data.avatar }}"
+                          width="50px"
+                          height="50px"
+                        />
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <div id="article-link">
+                    <p class="recent-article-link">{{ post.title }} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>
