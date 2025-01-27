@@ -36,11 +36,12 @@
       box-sizing: border-box;
     }
 
-    /* Video container (large screens, 16:9 aspect ratio) */
+    /* Video container (large screens) */
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      padding-top: 150%; /* 16:9 aspect ratio trick */
+      /* 150% from the original code */
+      padding-top: 150%; 
       border-radius: 8px;
       overflow: hidden;
       position: relative;
@@ -89,22 +90,21 @@
       border-radius: 5px;
     }
 
-    /* Recent articles wrapper under the stage picture */
+    /* Articles under the stage picture */
     .recent-articles-wrapper {
       /* any styling you need */
     }
 
     /*
       ===============
-      2) RESPONSIVE (≤992px)
-         - Use a grid to reorder:
-           1) Stage Picture
-           2) Video + Description
-           3) Articles
-         - Scale down video + description visually
+      2) RESPONSIVE (≤992px, then ≤576px)
+         - Use grid to reorder on very small screens:
+           1) Stage Picture (top)
+           2) Video + Description (middle)
+           3) Articles (bottom)
       ===============
     */
-    @media (max-width: 992px) {
+    @media (max-width: 576px) {
       .hero-main-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -116,52 +116,47 @@
           "articles";
       }
 
+      /* The right column’s children become direct items in the grid */
       .hero-col-right {
-        /* Let the stage picture and articles be grid items */
         display: contents;
       }
 
-      /* Stage picture first */
+      /* Stage picture at the top */
       .stage-picture-container {
         grid-area: stage;
         min-height: auto !important;
         margin-bottom: 1rem;
       }
 
-      /* Then video + description */
+      /* Video + description side-by-side in the middle */
       .hero-col-left {
         grid-area: video;
         margin: 0;
         width: 100%;
-        display: block; /* reset */
+        min-width: 100px;
       }
 
-      /*
-        **Scale down** the combined container so it appears smaller
-        while still side by side. 
-      */
       .abde-wrapper {
         display: flex;
         flex-direction: row;
         gap: 1rem;
-
-        /* Scale down about ~70% of the normal size; adjust as needed */
+        /* If scaling is causing problems, remove or reduce it:
         transform: scale(0.7);
-        transform-origin: top center; 
-        /* transform-origin ensures the “top center” stays in place
-           while we scale  */
+        transform-origin: top left;
+        */
       }
 
-      /* Side by side at 50% each of that scaled container */
       .video-container {
-        width: 50%;
-        padding-top: 75%; /* smaller ratio to keep it visually shorter */
+        width: 30%;
+        /* Override to ~16:9 ratio for small screens */
+        padding-top: 56.25% !important; 
         margin: 0;
       }
+
       .abde-main-description {
-        width: 50%;
+        width: 70%;
         margin: 0;
-        font-size: 0.9rem; 
+        font-size: 0.8rem;
       }
 
       /* Articles last */
@@ -169,27 +164,13 @@
         grid-area: articles;
       }
 
-      /* Smaller buttons on small screens */
+      /* Buttons smaller on small screens */
       .jumbotron-btns button {
         font-size: 0.85rem;
         padding: 0.4rem 0.75rem;
       }
     }
 
-    /*
-      ===============
-      3) VERY SMALL SCREENS (≤576px)
-         - Keep the scale or tweak further
-      ===============
-    */
-    @media (max-width: 576px) {
-      .abde-main-description {
-        font-size: 0.8rem;
-      }
-      .jumbotron-btns button {
-        font-size: 0.75rem;
-      }
-    }
   </style>
 </head>
 
@@ -198,7 +179,6 @@
     <div class="hero-main-container">
       <!-- LEFT COLUMN: Video + Description -->
       <div class="hero-col-left">
-        <!-- abde-wrapper to hold both side by side on small screens -->
         <div class="abde-wrapper">
           <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -208,11 +188,11 @@
           </div>
           <div class="abde-main-description">
             <p style="font-family: Arial, sans-serif; line-height: 1.6;">
-              <span style="font-weight: bold;">Abde</span> is a Technologist, Consultant, ex-CEO, and Keynote speaker.
+              <strong>Abde</strong> is a Technologist, Consultant, ex-CEO, and Keynote speaker.
               <br>
               Abde worked last 17 years with Fortinet, PaloAlto Networks, Juniper, Huawei.
               <br>
-              <span style="font-style: italic;">CCIE, JNCIE, NSE4/7, PAN PCNSE. Blogger & chess player.</span>
+              <em>CCIE, JNCIE, NSE4/7, PAN PCNSE. Blogger & chess player.</em>
             </p>
             <div class="jumbotron-btns">
               <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
