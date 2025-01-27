@@ -88,7 +88,7 @@ CopyInsert
     padding: 2rem;
     border-radius: 8px;
 }
-6. _includes/recent_articles.html
+6. _includes/content.html
 Purpose: Displays recent blog posts Key Controls:
 
 Article cards layout
