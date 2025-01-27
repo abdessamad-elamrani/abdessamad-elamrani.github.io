@@ -6,14 +6,11 @@
   <title>Hero with Stage Picture + Recent Articles</title>
 
   <style>
-    /*
-    ===============
-    1) MAIN HERO CONTAINER (Large Screens)
-    - Two side-by-side columns: 
-      - Left: Video + description + buttons
-      - Right: Stage picture + articles
-    ===============
-    */
+    /* ==============
+       1) MAIN HERO CONTAINER (Large Screens)
+       - Left: Video + Description
+       - Right: Stage Picture + Articles
+       ============== */
     .hero-main-container {
       display: flex;
       flex-direction: row;
@@ -23,8 +20,6 @@
       margin-bottom: 0;
       box-sizing: border-box;
     }
-
-    /* Left Column (C1): Video + description + buttons */
     .hero-col-left {
       display: flex;
       flex-direction: column;
@@ -34,8 +29,6 @@
       box-sizing: border-box;
       flex-shrink: 1;
     }
-
-    /* Right Column (C2): Stage Picture + articles */
     .hero-col-right {
       display: flex;
       flex-direction: column;
@@ -43,21 +36,11 @@
       box-sizing: border-box;
     }
 
-    /*
-    ===============
-    2) VIDEO, DESCRIPTION & BUTTONS
-    ===============
-    */
-    .abde-wrapper {
-      /* Large screens: stack them if you want, or keep them in one column */
-      display: block;
-      width: 100%;
-    }
-
+    /* Video container (large screens, 16:9 aspect ratio) */
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      padding-top: 150%;  /* 16:9 aspect ratio trick */
+      padding-top: 150%; /* 16:9 aspect ratio trick */
       border-radius: 8px;
       overflow: hidden;
       position: relative;
@@ -71,6 +54,7 @@
       object-fit: cover;
     }
 
+    /* Description box (large screens) */
     .abde-main-description {
       width: 100%;
       color: #0e0e0f;
@@ -89,14 +73,10 @@
       margin-top: 1rem;
     }
 
-    /*
-    ===============
-    3) STAGE PICTURE + ARTICLES
-    ===============
-    */
+    /* Stage Picture (large screens) */
     .stage-picture-container {
       width: 100%;
-      min-height: 320px;  /* for large screens */
+      min-height: 320px;
       margin-bottom: 1rem;
       position: relative;
       opacity: 0.85; /* slight transparency */
@@ -109,23 +89,23 @@
       border-radius: 5px;
     }
 
+    /* Recent articles wrapper under the stage picture */
     .recent-articles-wrapper {
-      /* Articles displayed below the stage picture */
+      /* any styling you need */
     }
 
     /*
-    ===============
-    4) RESPONSIVE LAYOUT (≤992px)
-       - Switch to a grid so we can reorder the sections easily:
-         1) Stage Picture
-         2) Video + Description
-         3) Articles
-       - Also keep video & description side by side (each 50%)
-    ===============
+      ===============
+      2) RESPONSIVE (≤992px)
+         - Use a grid to reorder:
+           1) Stage Picture
+           2) Video + Description
+           3) Articles
+         - Scale down video + description visually
+      ===============
     */
     @media (max-width: 992px) {
       .hero-main-container {
-        /* Turn off the big-screen flex */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
@@ -136,8 +116,8 @@
           "articles";
       }
 
-      /* The right column (which has stage + articles) becomes 'contents' so we can place children in the grid areas. */
       .hero-col-right {
+        /* Let the stage picture and articles be grid items */
         display: contents;
       }
 
@@ -148,36 +128,48 @@
         margin-bottom: 1rem;
       }
 
-      /* video + description second */
+      /* Then video + description */
       .hero-col-left {
         grid-area: video;
-        width: 100%;
         margin: 0;
+        width: 100%;
+        display: block; /* reset */
       }
 
-      /* articles last */
-      .recent-articles-wrapper {
-        grid-area: articles;
-      }
-
-      /* Side-by-side for video + description (50% each) */
+      /*
+        **Scale down** the combined container so it appears smaller
+        while still side by side. 
+      */
       .abde-wrapper {
         display: flex;
         flex-direction: row;
         gap: 1rem;
+
+        /* Scale down about ~70% of the normal size; adjust as needed */
+        transform: scale(0.7);
+        transform-origin: top center; 
+        /* transform-origin ensures the “top center” stays in place
+           while we scale  */
       }
+
+      /* Side by side at 50% each of that scaled container */
       .video-container {
         width: 50%;
-        padding-top: 75%; /* smaller aspect ratio for narrow screens */
+        padding-top: 75%; /* smaller ratio to keep it visually shorter */
         margin: 0;
       }
       .abde-main-description {
         width: 50%;
         margin: 0;
-        font-size: 0.9rem; /* slightly smaller font on small screens */
+        font-size: 0.9rem; 
       }
 
-      /* Buttons smaller on small screens */
+      /* Articles last */
+      .recent-articles-wrapper {
+        grid-area: articles;
+      }
+
+      /* Smaller buttons on small screens */
       .jumbotron-btns button {
         font-size: 0.85rem;
         padding: 0.4rem 0.75rem;
@@ -185,19 +177,14 @@
     }
 
     /*
-    ===============
-    5) VERY SMALL SCREENS (≤576px)
-    - Keep video & description at 50% each, further shrink font if needed
-    ===============
+      ===============
+      3) VERY SMALL SCREENS (≤576px)
+         - Keep the scale or tweak further
+      ===============
     */
     @media (max-width: 576px) {
-      .video-container {
-        width: 50%;
-        padding-top: 75%;
-      }
       .abde-main-description {
-        width: 50%;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
       }
       .jumbotron-btns button {
         font-size: 0.75rem;
@@ -209,8 +196,9 @@
 <body>
   <div class="container-fluid">
     <div class="hero-main-container">
-      <!-- LEFT COLUMN (C1): Video & Description -->
+      <!-- LEFT COLUMN: Video + Description -->
       <div class="hero-col-left">
+        <!-- abde-wrapper to hold both side by side on small screens -->
         <div class="abde-wrapper">
           <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -235,12 +223,11 @@
               </a>
             </div>
           </div>
-        </div><!-- /.abde-wrapper -->
+        </div><!-- /abde-wrapper -->
       </div><!-- /.hero-col-left -->
 
-      <!-- RIGHT COLUMN (C2): Stage Picture + Recent Articles -->
+      <!-- RIGHT COLUMN: Stage Picture + Articles -->
       <div class="hero-col-right">
-        <!-- Stage Picture -->
         <div class="stage-picture-container">
           <img
             class="stage-picture"
@@ -248,7 +235,6 @@
             alt="Background"
           />
         </div>
-        <!-- Recent Articles -->
         <div class="recent-articles-wrapper">
           {% include recent_articles.html %}
         </div>
