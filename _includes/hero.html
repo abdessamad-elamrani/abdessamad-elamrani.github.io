@@ -7,41 +7,57 @@
 
   <style>
     /*
-    ====
-    1) MAIN HERO CONTAINER
-    - Holds both columns (C1 & C2) side by side for large screens.
-    ====
+    ===============
+    1) MAIN HERO CONTAINER (Large Screens)
+    - Two side-by-side columns: 
+      - Left: Video + description + buttons
+      - Right: Stage picture + articles
+    ===============
     */
     .hero-main-container {
-      display: flex;            /* horizontal layout of columns */
-      flex-direction: row;      /* left-to-right by default */
-      width: 100%;              /* full width of the page/container */
+      display: flex;
+      flex-direction: row;
+      width: 100%;
       background-color: var(--main-background-color);
       padding: 1rem;
       margin-bottom: 0;
       box-sizing: border-box;
     }
 
-    /*
-    ====
-    2) LEFT COLUMN (C1): Video + Description + Buttons
-    ====
-    */
+    /* Left Column (C1): Video + description + buttons */
     .hero-col-left {
       display: flex;
       flex-direction: column;
-      width: 17.4%;    /* Adjust as you like (e.g., 20%, 25%, etc.) */
+      width: 17.4%;
       min-width: 200px;
       margin-right: 1rem;
       box-sizing: border-box;
       flex-shrink: 1;
     }
 
-    /* The container for the embedded video */
+    /* Right Column (C2): Stage Picture + articles */
+    .hero-col-right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      box-sizing: border-box;
+    }
+
+    /*
+    ===============
+    2) VIDEO, DESCRIPTION & BUTTONS
+    ===============
+    */
+    .abde-wrapper {
+      /* Large screens: stack them if you want, or keep them in one column */
+      display: block;
+      width: 100%;
+    }
+
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      padding-top: 150%;    /* 16:9 aspect ratio (9/16 = 0.5625) */
+      padding-top: 150%;  /* 16:9 aspect ratio trick */
       border-radius: 8px;
       overflow: hidden;
       position: relative;
@@ -55,7 +71,6 @@
       object-fit: cover;
     }
 
-    /* Description box in C1, under the video */
     .abde-main-description {
       width: 100%;
       color: #0e0e0f;
@@ -75,25 +90,16 @@
     }
 
     /*
-    ====
-    3) RIGHT COLUMN (C2): Stage Picture + Recent Articles
-    - By default, flex: 1 to fill remaining horizontal space.
-    ====
+    ===============
+    3) STAGE PICTURE + ARTICLES
+    ===============
     */
-    .hero-col-right {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      box-sizing: border-box;
-    }
-
-    /* Stage picture at the top of C2 */
     .stage-picture-container {
       width: 100%;
-      min-height: 320px;
+      min-height: 320px;  /* for large screens */
       margin-bottom: 1rem;
       position: relative;
-      opacity: 0.85; /* Slight transparency */
+      opacity: 0.85; /* slight transparency */
     }
     .stage-picture {
       width: 100%;
@@ -103,89 +109,86 @@
       border-radius: 5px;
     }
 
-    /* Articles go below the stage picture */
     .recent-articles-wrapper {
-      /* Add any desired styling here */
+      /* Articles displayed below the stage picture */
     }
 
     /*
-    ====
-    4) RESPONSIVE BREAKPOINTS
-       @media (max-width: 992px): 
-        - Stack columns vertically but reorder so Stage Picture is 1st,
-          Video+Description 2nd, Articles last.
-        - Make video + description 50% each, side by side.
-    ====
+    ===============
+    4) RESPONSIVE LAYOUT (≤992px)
+       - Switch to a grid so we can reorder the sections easily:
+         1) Stage Picture
+         2) Video + Description
+         3) Articles
+       - Also keep video & description side by side (each 50%)
+    ===============
     */
     @media (max-width: 992px) {
-      /* Switch to a column-like layout but reorder using flex properties */
       .hero-main-container {
-        display: flex;
-        flex-direction: column;
+        /* Turn off the big-screen flex */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-gap: 1rem;
+        grid-template-areas:
+          "stage"
+          "video"
+          "articles";
       }
 
-      /* Move hero-col-right to the top -> Stage picture first */
+      /* The right column (which has stage + articles) becomes 'contents' so we can place children in the grid areas. */
       .hero-col-right {
-        order: 1;
+        display: contents;
       }
 
-      /* Move hero-col-left after the stage picture -> Video+Description second */
-      .hero-col-left {
-        order: 2;
-        width: 100%;
-        margin: 0;
-      }
-
-      /* The stage picture can shrink as needed without min-height gap */
+      /* Stage picture first */
       .stage-picture-container {
+        grid-area: stage;
         min-height: auto !important;
         margin-bottom: 1rem;
       }
 
-      /* For the video & description side by side at half width each */
+      /* video + description second */
+      .hero-col-left {
+        grid-area: video;
+        width: 100%;
+        margin: 0;
+      }
+
+      /* articles last */
+      .recent-articles-wrapper {
+        grid-area: articles;
+      }
+
+      /* Side-by-side for video + description (50% each) */
       .abde-wrapper {
         display: flex;
         flex-direction: row;
         gap: 1rem;
       }
-
-      /* If you need a parent container, we can reuse .hero-col-left or define new */
       .video-container {
         width: 50%;
-        padding-top: 75%; /* smaller ratio for narrower screens */
+        padding-top: 75%; /* smaller aspect ratio for narrow screens */
         margin: 0;
       }
-
       .abde-main-description {
         width: 50%;
         margin: 0;
-        /* decrease font a bit for small screens */
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* slightly smaller font on small screens */
       }
 
-      /* container for the two columns side by side */
-      /* If you prefer to keep them in the same container, we can integrate directly without a separate .abde-wrapper */
-
-      /* Optionally reduce button size for smaller screens */
-      .jumbotron-btns {
-        margin-top: 0.75rem;
-      }
+      /* Buttons smaller on small screens */
       .jumbotron-btns button {
         font-size: 0.85rem;
         padding: 0.4rem 0.75rem;
       }
-
-      /* Articles last */
-      .recent-articles-wrapper {
-        order: 3;
-      }
     }
 
     /*
-    ====
+    ===============
     5) VERY SMALL SCREENS (≤576px)
-    - Keep video & description side by side, but shrink font even more if needed.
-    ====
+    - Keep video & description at 50% each, further shrink font if needed
+    ===============
     */
     @media (max-width: 576px) {
       .video-container {
@@ -194,11 +197,10 @@
       }
       .abde-main-description {
         width: 50%;
-        font-size: 0.85rem; /* slightly smaller text on very narrow devices */
+        font-size: 0.85rem;
       }
       .jumbotron-btns button {
         font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
       }
     }
   </style>
@@ -207,10 +209,8 @@
 <body>
   <div class="container-fluid">
     <div class="hero-main-container">
-      <!-- Left Column (C1): Video + Description + Buttons -->
+      <!-- LEFT COLUMN (C1): Video & Description -->
       <div class="hero-col-left">
-        <!-- For small screens, we want video + description side by side (each 50%). 
-             We'll wrap them inside a parent for convenient row layout. -->
         <div class="abde-wrapper">
           <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -238,7 +238,7 @@
         </div><!-- /.abde-wrapper -->
       </div><!-- /.hero-col-left -->
 
-      <!-- Right Column (C2): Stage Picture + Recent Articles -->
+      <!-- RIGHT COLUMN (C2): Stage Picture + Recent Articles -->
       <div class="hero-col-right">
         <!-- Stage Picture -->
         <div class="stage-picture-container">
