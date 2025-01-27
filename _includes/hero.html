@@ -6,60 +6,42 @@
   <title>Hero with Stage Picture + Recent Articles</title>
 
   <style>
-    /*  
-    ===============
-    1) MAIN HERO CONTAINER (Large Screens)
-    - Two side-by-side columns: 
-      - Left (video + description + buttons)
-      - Right (stage picture + articles)
-    ===============
+    /*
+    ====
+    1) MAIN HERO CONTAINER
+    - Holds both columns (C1 & C2) side by side for large screens.
+    ====
     */
     .hero-main-container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
+      display: flex;            /* horizontal layout of columns */
+      flex-direction: row;      /* left-to-right by default */
+      width: 100%;              /* full width of the page/container */
       background-color: var(--main-background-color);
       padding: 1rem;
       margin-bottom: 0;
       box-sizing: border-box;
     }
 
-    /* LEFT COLUMN (C1): Video + Description + Buttons */
+    /*
+    ====
+    2) LEFT COLUMN (C1): Video + Description + Buttons
+    ====
+    */
     .hero-col-left {
       display: flex;
       flex-direction: column;
-      width: 17.4%;
+      width: 17.4%;    /* Adjust as you like (e.g., 20%, 25%, etc.) */
       min-width: 200px;
       margin-right: 1rem;
       box-sizing: border-box;
       flex-shrink: 1;
     }
 
-    /* RIGHT COLUMN (C2): Stage Picture + Articles */
-    .hero-col-right {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      box-sizing: border-box;
-    }
-
-    /*
-    ===============
-    2) VIDEO & DESCRIPTION + BUTTONS STYLING
-    ===============
-    */
-    .media-container {
-      display: flex;
-      flex-direction: column; /* On large screens, stack them vertically by default */
-      gap: 1rem;
-      margin-bottom: 1rem;
-      width: 100%;
-    }
-
+    /* The container for the embedded video */
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      padding-top: 150%; /* 16:9 aspect ratio trick */
+      padding-top: 150%;    /* 16:9 aspect ratio (9/16 = 0.5625) */
       border-radius: 8px;
       overflow: hidden;
       position: relative;
@@ -73,6 +55,7 @@
       object-fit: cover;
     }
 
+    /* Description box in C1, under the video */
     .abde-main-description {
       width: 100%;
       color: #0e0e0f;
@@ -87,115 +70,124 @@
       margin: 0;
       line-height: 1.4;
     }
-
     .jumbotron-btns {
-      margin-top: 0.75rem;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap; /* so buttons wrap if space is tight */
-    }
-    .jumbotron-btns button {
-      font-weight: bold;
-      cursor: pointer;
+      margin-top: 1rem;
     }
 
     /*
-    ===============
-    3) STAGE PICTURE + ARTICLES
-    ===============
+    ====
+    3) RIGHT COLUMN (C2): Stage Picture + Recent Articles
+    - By default, flex: 1 to fill remaining horizontal space.
+    ====
     */
+    .hero-col-right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      box-sizing: border-box;
+    }
+
+    /* Stage picture at the top of C2 */
     .stage-picture-container {
       width: 100%;
-      min-height: 320px; /* Large screens only */
+      min-height: 320px;
       margin-bottom: 1rem;
       position: relative;
       opacity: 0.85; /* Slight transparency */
     }
-
     .stage-picture {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 5px;
     }
 
+    /* Articles go below the stage picture */
+    .recent-articles-wrapper {
+      /* Add any desired styling here */
+    }
+
     /*
-    ===============
-    4) RESPONSIVE REORDERING (≤992px)
-    - 1) Stage picture on top
-    - 2) Video & Description
-    - 3) Articles last
-    ===============
+    ====
+    4) RESPONSIVE BREAKPOINTS
+       @media (max-width: 992px): 
+        - Stack columns vertically but reorder so Stage Picture is 1st,
+          Video+Description 2nd, Articles last.
+        - Make video + description 50% each, side by side.
+    ====
     */
     @media (max-width: 992px) {
-
-      /* Switch from flex to grid to reorder easily */
+      /* Switch to a column-like layout but reorder using flex properties */
       .hero-main-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-gap: 1rem;
-        grid-template-areas:
-          "stage"
-          "video"
-          "articles";
+        display: flex;
+        flex-direction: column;
       }
 
-      /* Let .hero-col-right's children become direct grid items */
+      /* Move hero-col-right to the top -> Stage picture first */
       .hero-col-right {
-        display: contents;
+        order: 1;
       }
 
-      /* Stage picture first */
-      .stage-picture-container {
-        grid-area: stage;
-        min-height: auto !important; /* override so it just fits the picture */
-      }
-
-      /* Video + Description second */
+      /* Move hero-col-left after the stage picture -> Video+Description second */
       .hero-col-left {
-        grid-area: video;
+        order: 2;
         width: 100%;
         margin: 0;
       }
 
-      /* Articles last */
-      .recent-articles-wrapper {
-        grid-area: articles;
+      /* The stage picture can shrink as needed without min-height gap */
+      .stage-picture-container {
+        min-height: auto !important;
+        margin-bottom: 1rem;
       }
 
-      /* Keep video & “description+buttons” side by side, each ~50% */
-      .media-container {
+      /* For the video & description side by side at half width each */
+      .abde-wrapper {
+        display: flex;
         flex-direction: row;
+        gap: 1rem;
       }
+
+      /* If you need a parent container, we can reuse .hero-col-left or define new */
       .video-container {
         width: 50%;
         padding-top: 75%; /* smaller ratio for narrower screens */
         margin: 0;
       }
+
       .abde-main-description {
         width: 50%;
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* center the text + buttons vertically */
-        /* reduce font slightly for smaller screens */
+        /* decrease font a bit for small screens */
         font-size: 0.9rem;
+      }
+
+      /* container for the two columns side by side */
+      /* If you prefer to keep them in the same container, we can integrate directly without a separate .abde-wrapper */
+
+      /* Optionally reduce button size for smaller screens */
+      .jumbotron-btns {
+        margin-top: 0.75rem;
       }
       .jumbotron-btns button {
         font-size: 0.85rem;
         padding: 0.4rem 0.75rem;
       }
+
+      /* Articles last */
+      .recent-articles-wrapper {
+        order: 3;
+      }
     }
 
     /*
-    ===============
+    ====
     5) VERY SMALL SCREENS (≤576px)
-    ===============
+    - Keep video & description side by side, but shrink font even more if needed.
+    ====
     */
     @media (max-width: 576px) {
-      /* Keep them side by side at 50% each, but shrink text a bit more */
       .video-container {
         width: 50%;
         padding-top: 75%;
@@ -215,50 +207,47 @@
 <body>
   <div class="container-fluid">
     <div class="hero-main-container">
-      <!-- Left Column (C1): Video + description + 2 buttons -->
+      <!-- Left Column (C1): Video + Description + Buttons -->
       <div class="hero-col-left">
-        <div class="media-container">
+        <!-- For small screens, we want video + description side by side (each 50%). 
+             We'll wrap them inside a parent for convenient row layout. -->
+        <div class="abde-wrapper">
           <div class="video-container">
             <video autoplay loop muted playsinline>
               <source src="assets/videos/newvideo_h264.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-
           <div class="abde-main-description">
-            <p>
-              <strong>Abde</strong> is a
-              <strong>tech industry technologist, consultant ex-CEO, and keynote speaker</strong>.
-              <br/><br/>
-              Abde worked the last 16 years for top vendors in the cybersec/cloud/network space:
-              <strong>Juniper Networks, Huawei, Palo Alto Networks, and Fortinet</strong>.
+            <p style="font-family: Arial, sans-serif; line-height: 1.6;">
+              <span style="font-weight: bold;">Abde</span> is a Technologist, Consultant, ex-CEO, and Keynote speaker.
+              <br>
+              Abde worked last 17 years with Fortinet, PaloAlto Networks, Juniper, Huawei.
+              <br>
+              <span style="font-style: italic;">CCIE, JNCIE, NSE4/7, PAN PCNSE. Blogger & chess player.</span>
             </p>
             <div class="jumbotron-btns">
               <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
-                <button class="btn btn-md btn-warning">
-                  LinkedIn
-                </button>
+                <button class="btn btn-md btn-warning"><strong>LinkedIn</strong></button>
               </a>
               <a href="https://github.com/abdessamad-elamrani" target="_blank">
-                <button class="btn btn-md btn-warning">
-                  GitHub
-                </button>
+                <button class="btn btn-md btn-warning"><strong>GitHub</strong></button>
               </a>
             </div>
-          </div><!-- /.abde-main-description -->
-
-        </div><!-- /.media-container -->
+          </div>
+        </div><!-- /.abde-wrapper -->
       </div><!-- /.hero-col-left -->
 
       <!-- Right Column (C2): Stage Picture + Recent Articles -->
       <div class="hero-col-right">
         <!-- Stage Picture -->
         <div class="stage-picture-container">
-          <img class="stage-picture" 
-               src="/assets/img/{{ site.home_background_image }}" 
-               alt="Background" />
+          <img
+            class="stage-picture"
+            src="/assets/img/{{ site.home_background_image }}"
+            alt="Background"
+          />
         </div>
-
         <!-- Recent Articles -->
         <div class="recent-articles-wrapper">
           {% include recent_articles.html %}
@@ -268,9 +257,9 @@
   </div><!-- /.container-fluid -->
 
   <script>
-    // Example: Pause video on last frame if desired
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.getElementById('profile-video');
+      // Optionally pause on last frame
       if (video) {
         video.addEventListener('ended', function() {
           video.pause();
