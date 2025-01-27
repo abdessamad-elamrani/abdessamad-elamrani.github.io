@@ -1,215 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Jumbotron</title>
-    <style>
-        .jumbotron {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 100%;
-            background-color: var(--main-background-color);
-            padding: 1rem 1rem 0 1rem;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hero with Stage Picture + Recent Articles</title>
 
-        .video-container {
-            width: 28%;
-            margin-right: 1.5rem;
-            min-height: 280px;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
+  <style>
+    /*  
+      ==========================================
+        1) MAIN HERO CONTAINER
+         - Parent container housing both columns (C1 & C2).
+         - Styled as a flex container so columns can sit side by side. 
+      ==========================================
+    */
+    .hero-main-container {
+      display: flex;              /* Horizontal layout of child columns */
+      flex-direction: row;        /* Left-to-right by default */
+      width: 100%;                /* Full width of the page/container */
+      background-color: var(--main-background-color);
+      padding: 1rem;
+      margin-bottom: 0;
+      box-sizing: border-box;
+    }
 
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    /*
+      ==========================================
+        2) LEFT COLUMN (C1): Video + Description
+         - Adjust "width: 15%" to your liking (e.g., 25%, 35%, etc.).
+      ==========================================
+    */
+    .hero-col-left {
+      display: flex;
+      flex-direction: column;
+      width: 17.4%;         /* Abde this is most critical layout value, as column right adjust automatically Adjust me to change left column width */
+      min-width: 250px;   /* Ensures C1 doesn’t get too narrow on small screens */
+      margin-right: 1rem; /* Spacing between C1 & C2 */
+      box-sizing: border-box;
+    }
 
-        .jumbotron-image-container {
-            position: relative;
-            width: 65%;
-            min-height: 400px;
-            display: flex;
-            align-items: flex-start;
-        }
+    /* The container holding the embedded video in C1 */
+    .video-container {
+      width: 100%;
+      margin-bottom: 1rem;
+      min-height: 224px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Actual video element (cover entire .video-container area) */
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .jumbotron-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            max-height: none;
-        }
+    /* Description box in C1, under the video */
+    .abde-main-description {
+      width: 100%;
+      color: #0e0e0f;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.75rem;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
+    .abde-main-description p {
+      margin: 0;
+    }
+    .jumbotron-btns {
+      margin-top: 20px;
+    }
 
-        .jumbotron-content {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            z-index: 2;
-            width: min(35%, 500px);
-            text-align: left;
-            color: #000000;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 1rem;
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
-        }
+    /*
+      ==========================================
+        3) RIGHT COLUMN (C2): Stage Picture + Recent Articles
+         - Currently set to flex: 1, so it expands to fill remaining horizontal space.
+         - If you want a fixed width (e.g. 70%), remove "flex: 1" and use "width: 70%;".
+      ==========================================
+    */
+    .hero-col-right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;            /* Takes remaining space not used by .hero-col-left */
+      box-sizing: border-box;
+    }
 
-        /* Large tablets and small desktops */
-        @media (max-width: 1200px) {
-            .jumbotron-content {
-                width: min(40%, 450px);
-            }
-        }
+    /* Stage picture at the top of C2 */
+    .stage-picture-container {
+      width: 100%;
+      min-height: 320px;
+      margin-bottom: 1rem;
+      position: relative;
+      opacity: 0.85; /* Slight transparency */
+    }
+    .stage-picture {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 5px;
+    }
 
-        /* Tablets */
-        @media (max-width: 992px) {
-            .video-container {
-                width: 35%;
-                min-height: 250px;
-            }
-            
-            .jumbotron-image-container {
-                width: 60%;
-                min-height: 350px;
-            }
+    /*
+      ==========================================
+        4) RESPONSIVE BREAKPOINTS
+         - Adjust layout for smaller devices.
+         - @media (max-width: 992px): stack columns vertically.
+      ==========================================
+    */
+    @media (max-width: 992px) {
+      /* Tablets: switch columns from side-by-side to stacked */
+      .hero-main-container {
+        flex-direction: column;
+      }
+      .hero-col-left, 
+      .hero-col-right {
+        width: 100%;     /* Full width once stacked */
+        margin-right: 0; /* Remove horizontal gap */
+      }
+    }
+    @media (max-width: 768px) {
+      .video-container {
+        min-height: 180px;
+      }
+    }
+    @media (max-width: 576px) {
+      .abde-main-description {
+        font-size: 0.9em; /* Slightly smaller text on small phones */
+        
+      }
+    }
 
-            .jumbotron-content {
-                width: min(45%, 400px);
-                top: 1.5rem;
-                right: 1.5rem;
-            }
-        }
-
-        /* Small tablets and large phones */
-        @media (max-width: 768px) {
-            .jumbotron {
-                flex-direction: column;
-                padding: 1rem 0.5rem 0 0.5rem;
-            }
-            
-            .video-container {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 1rem;
-                min-height: 200px;
-                max-height: 300px;
-            }
-            
-            .jumbotron-image-container {
-                width: 100%;
-                min-height: 300px;
-            }
-            
-            .jumbotron-content {
-                position: relative;
-                top: auto;
-                right: auto;
-                width: 90%;
-                margin: 1rem auto;
-                background: rgba(255, 255, 255, 0.85);
-            }
-
-            .jumbotron-btns {
-                text-align: center;
-            }
-        }
-
-        /* Small phones */
-        @media (max-width: 576px) {
-            .jumbotron {
-                padding: 0.5rem 0.25rem 0 0.25rem;
-            }
-
-            .video-container {
-                min-height: 180px;
-                max-height: 250px;
-                margin-bottom: 0.5rem;
-            }
-
-            .jumbotron-image-container {
-                min-height: 250px;
-            }
-
-            .jumbotron-content {
-                width: 95%;
-                padding: 0.75rem;
-                margin: 0.5rem auto;
-                font-size: 0.9em;
-            }
-
-            .btn {
-                padding: 0.375rem 0.75rem;
-                font-size: 0.875rem;
-            }
-        }
-
-        .jumbotron-btns {
-            margin-top: 20px;
-        }
-
-        .jumbotron-heading, .lead {
-            color: #000000;
-        }
-
-        .container-fluid {
-            padding: 0;
-        }
-
-        #recent-articles {
-            margin-top: 0;
-            padding-top: 0;
-        }
-    </style>
+    /*
+      ==========================================
+        (Bootstrap-like) container-fluid reset
+      ==========================================
+    */
+    .container-fluid {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="jumbotron">
+  <div class="container-fluid">
+    <!-- 
+      MAIN HERO FLEX CONTAINER 
+      C1 (left) + C2 (right)
+    -->
+    <div class="hero-main-container">
+
+      <!-- ==============================
+           C1: LEFT COLUMN 
+           Contains: 
+             1) Video at top
+             2) Description box underground
+      ============================== -->
+      <div class="hero-col-left">
+        <!-- 1) Video  -->
         <div class="video-container">
-            <video 
-                id="profile-video"
-                autoplay 
-                muted 
-                playsinline
-            >
-                <source src="../assets/videos/newvideo_h264.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+          <video
+            id="profile-video"
+            autoplay
+            muted
+            playsinline
+          >
+            <source src="../assets/videos/newvideo_h264.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <div class="jumbotron-image-container">
-            <img class="jumbotron-image" src="/assets/img/{{site.home_background_image}}" alt="Background">
-            <div class="jumbotron-content">
-                <p class="lead">
-                    <strong>Abde</strong> is a <strong>tech industry technologist, consultant ex-CEO, and keynote speaker</strong>.
-                    <br><br>
-                    Abde worked last 16 years for top vendors in the cybersec/cloud/network space: <strong>Juniper Networks, Huawei, Palo Alto Networks, and Fortinet</strong>.
-                </p>
-                <div class="jumbotron-btns">
-                    <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
-                        <button class="btn btn-md btn-warning"> <strong>LinkedIn</strong> </button>
-                    </a>
-                    <a href="https://github.com/abdessamad-elamrani" target="_blank">
-                        <button class="btn btn-md btn-warning"> <strong>GitHub</strong> </button>
-                    </a>
-                </div>
-            </div>
+
+        <!-- 2) Description About Abde -->
+        <div class="abde-main-description">
+          <p>
+            <strong>Abde</strong> is a
+            <strong>tech industry technologist, consultant ex-CEO, and keynote speaker</strong>.
+            <br/><br/>
+            Abde worked the last 16 years for top vendors in the cybersec/cloud/network space:
+            <strong>Juniper Networks, Huawei, Palo Alto Networks, and Fortinet</strong>.
+          </p>
+          <div class="jumbotron-btns">
+            <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
+              <button class="btn btn-md btn-warning">
+                <strong>LinkedIn</strong>
+              </button>
+            </a>
+            <a href="https://github.com/abdessamad-elamrani" target="_blank">
+              <button class="btn btn-md btn-warning">
+                <strong>GitHub</strong>
+              </button>
+            </a>
+          </div>
         </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('profile-video');
-            // When video ends, pause it on the last frame
-            video.addEventListener('ended', function() {
-                video.pause();
-            });
-        });
-    </script>
+      </div>
+      <!-- END C1 (LEFT COLUMN) -->
+
+      <!-- ==============================
+           C2: RIGHT COLUMN 
+           Contains:
+             1) Stage Picture (top)
+             2) "recent_articles.html" (already includes 2 subcolumns)
+      ============================== -->
+      <div class="hero-col-right">
+        <!-- 1) Stage picture at top -->
+        <div class="stage-picture-container">
+          <img
+            class="stage-picture"
+            src="/assets/img/{{ site.home_background_image }}"
+            alt="Background"
+          />
+        </div>
+
+        <!-- 2) Include your existing Recent Articles (2-col system) -->
+        {% include recent_articles.html %}
+      </div>
+      <!-- END C2 (RIGHT COLUMN) -->
+    </div><!-- /.hero-main-container -->
+  </div><!-- /.container-fluid -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('profile-video');
+      // Optionally pause on last frame
+      video.addEventListener('ended', function() {
+        video.pause();
+      });
+    });
+  </script>
 </body>
 </html>
