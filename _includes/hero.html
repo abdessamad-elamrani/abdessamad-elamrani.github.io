@@ -8,21 +8,23 @@
   <style>
     /*  
     ===============
-    1) MAIN HERO CONTAINER
-    - Large screens: two columns, side by side.
+    1) MAIN HERO CONTAINER (Large Screens)
+    - Two side-by-side columns: 
+      - Left (video + description + buttons)
+      - Right (stage picture + articles)
     ===============
     */
     .hero-main-container {
-      display: flex;    
-      flex-direction: row;    
-      width: 100%;    
+      display: flex;
+      flex-direction: row;
+      width: 100%;
       background-color: var(--main-background-color);
       padding: 1rem;
       margin-bottom: 0;
       box-sizing: border-box;
     }
 
-    /* LEFT COLUMN (C1): Video + Description */
+    /* LEFT COLUMN (C1): Video + Description + Buttons */
     .hero-col-left {
       display: flex;
       flex-direction: column;
@@ -43,12 +45,12 @@
 
     /*
     ===============
-    2) VIDEO + DESCRIPTION STYLING
+    2) VIDEO & DESCRIPTION + BUTTONS STYLING
     ===============
     */
     .media-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* On large screens, stack them vertically by default */
       gap: 1rem;
       margin-bottom: 1rem;
       width: 100%;
@@ -57,12 +59,11 @@
     .video-container {
       width: 100%;
       margin-bottom: 1rem;
-      padding-top: 150%;  /* 16:9 aspect ratio trick */
+      padding-top: 150%; /* 16:9 aspect ratio trick */
       border-radius: 8px;
       overflow: hidden;
       position: relative;
     }
-
     .video-container video {
       position: absolute;
       top: 0;
@@ -82,22 +83,33 @@
       box-sizing: border-box;
       margin-bottom: 1rem;
     }
-
     .abde-main-description p {
       margin: 0;
+      line-height: 1.4;
+    }
+
+    .jumbotron-btns {
+      margin-top: 0.75rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap; /* so buttons wrap if space is tight */
+    }
+    .jumbotron-btns button {
+      font-weight: bold;
+      cursor: pointer;
     }
 
     /*
     ===============
-    3) STAGE PICTURE + RECENT ARTICLES
+    3) STAGE PICTURE + ARTICLES
     ===============
     */
     .stage-picture-container {
       width: 100%;
-      min-height: 320px;  /* For large screens only */
+      min-height: 320px; /* Large screens only */
       margin-bottom: 1rem;
       position: relative;
-      opacity: 0.85;      /* Slight transparency */
+      opacity: 0.85; /* Slight transparency */
     }
 
     .stage-picture {
@@ -110,17 +122,16 @@
 
     /*
     ===============
-    4) RESPONSIVE REORDERING
-    - For small screens (≤992px): 
-        1) Stage picture on top
-        2) Video + description
-        3) Articles at the bottom
-      Also remove the large min-height to prevent unused space.
+    4) RESPONSIVE REORDERING (≤992px)
+    - 1) Stage picture on top
+    - 2) Video & Description
+    - 3) Articles last
     ===============
     */
     @media (max-width: 992px) {
+
+      /* Switch from flex to grid to reorder easily */
       .hero-main-container {
-        /* Switch from flex to grid to reorder easily */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
@@ -131,18 +142,18 @@
           "articles";
       }
 
-      /* We want .hero-col-right to let children become direct grid items */
+      /* Let .hero-col-right's children become direct grid items */
       .hero-col-right {
-        display: contents; /* collapses container so children can be re-laid out in the grid */
+        display: contents;
       }
 
       /* Stage picture first */
       .stage-picture-container {
         grid-area: stage;
-        min-height: auto !important;  /* Override so it only fits the picture */
+        min-height: auto !important; /* override so it just fits the picture */
       }
 
-      /* Left column (video+desc) second */
+      /* Video + Description second */
       .hero-col-left {
         grid-area: video;
         width: 100%;
@@ -154,10 +165,9 @@
         grid-area: articles;
       }
 
-      /* Keep video & description side by side for small screens */
+      /* Keep video & “description+buttons” side by side, each ~50% */
       .media-container {
         flex-direction: row;
-        gap: 1rem;
       }
       .video-container {
         width: 50%;
@@ -166,9 +176,16 @@
       }
       .abde-main-description {
         width: 50%;
-        display: flex;
-        align-items: center;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* center the text + buttons vertically */
+        /* reduce font slightly for smaller screens */
+        font-size: 0.9rem;
+      }
+      .jumbotron-btns button {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.75rem;
       }
     }
 
@@ -178,16 +195,18 @@
     ===============
     */
     @media (max-width: 576px) {
-      /* STILL keep video and description side by side, per request */
-      .media-container {
-        flex-direction: row;
-      }
+      /* Keep them side by side at 50% each, but shrink text a bit more */
       .video-container {
         width: 50%;
         padding-top: 75%;
       }
       .abde-main-description {
         width: 50%;
+        font-size: 0.85rem; /* slightly smaller text on very narrow devices */
+      }
+      .jumbotron-btns button {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
       }
     }
   </style>
@@ -196,7 +215,7 @@
 <body>
   <div class="container-fluid">
     <div class="hero-main-container">
-      <!-- Left Column (C1): Video + Description -->
+      <!-- Left Column (C1): Video + description + 2 buttons -->
       <div class="hero-col-left">
         <div class="media-container">
           <div class="video-container">
@@ -205,6 +224,7 @@
               Your browser does not support the video tag.
             </video>
           </div>
+
           <div class="abde-main-description">
             <p>
               <strong>Abde</strong> is a
@@ -216,18 +236,19 @@
             <div class="jumbotron-btns">
               <a href="https://www.linkedin.com/in/abdessamadelamrani/" target="_blank">
                 <button class="btn btn-md btn-warning">
-                  <strong>LinkedIn</strong>
+                  LinkedIn
                 </button>
               </a>
               <a href="https://github.com/abdessamad-elamrani" target="_blank">
                 <button class="btn btn-md btn-warning">
-                  <strong>GitHub</strong>
+                  GitHub
                 </button>
               </a>
             </div>
-          </div>
-        </div>
-      </div>
+          </div><!-- /.abde-main-description -->
+
+        </div><!-- /.media-container -->
+      </div><!-- /.hero-col-left -->
 
       <!-- Right Column (C2): Stage Picture + Recent Articles -->
       <div class="hero-col-right">
@@ -237,16 +258,17 @@
                src="/assets/img/{{ site.home_background_image }}" 
                alt="Background" />
         </div>
+
         <!-- Recent Articles -->
         <div class="recent-articles-wrapper">
           {% include recent_articles.html %}
         </div>
-      </div>
-    </div>
-  </div>
+      </div><!-- /.hero-col-right -->
+    </div><!-- /.hero-main-container -->
+  </div><!-- /.container-fluid -->
 
   <script>
-    // Example: Pause on last frame if desired
+    // Example: Pause video on last frame if desired
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.getElementById('profile-video');
       if (video) {
