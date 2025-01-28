@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       width: 17.4%;
-      min-width: 200px;
+      /*min-width: 200px;*/
       margin-right: 1rem;
       box-sizing: border-box;
       flex-shrink: 1;
@@ -68,7 +68,7 @@
     }
     .abde-main-description p {
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.2;
     }
     .jumbotron-btns {
       margin-top: 1rem;
@@ -77,7 +77,7 @@
     /* Stage Picture (large screens) */
     .stage-picture-container {
       width: 100%;
-      min-height: 320px;
+      /* min-height: 320px;*/
       margin-bottom: 1rem;
       position: relative;
       opacity: 0.85; /* slight transparency */
@@ -105,7 +105,9 @@
       ===============
     */
     @media (max-width: 576px) {
-
+      .navbar-brand {
+        font-size: 1rem;
+      }
       .hero-main-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -134,7 +136,7 @@
         grid-area: video;
         margin: 0;
         width: 100%;
-        min-width: 100px;
+        /* min-width: 100px; */
       }
 
       .abde-wrapper {
@@ -192,7 +194,7 @@
             </video>
           </div>
           <div class="abde-main-description">
-            <p style="font-family: Arial, sans-serif; line-height: 1.6;">
+            <p style="font-family: Arial, sans-serif; line-height: 1.2;">
               <strong>Abde</strong> is a Technologist, Consultant, ex-CEO, and Keynote speaker.
               <br>
               Abde worked last 17 years with Fortinet, PaloAlto Networks, Juniper, Huawei.
