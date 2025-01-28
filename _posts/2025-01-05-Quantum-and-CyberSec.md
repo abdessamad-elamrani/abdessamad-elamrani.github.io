@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Quantum Computing and CyberSec, the math story behind it"
-summary: "Quantum Computing and CyberSec, the math story behind it"
+title:  "Not Quantum, but just a bit of the math behind"
+summary: "Not Quantum, but just a bit of the math behind"
 author: abde
 date: '2025-01-15 14:35:23 +0530'
 category: tech
-thumbnail: /assets/img/posts/2024-05-05-TLS_1.3_esni_and_ECH_advancements/TLS-and-ECH.png
+thumbnail: /assets/img/posts/2023-quantum/bits.jpg
 keywords: CyberSec, TLS, ECH, Cloud, Quantum, Cryptography
 permalink: /blog/quantum_and_cybersec
 usemathjax: true
