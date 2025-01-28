@@ -1,21 +1,22 @@
-<!-- Mailchimp Newletters -->
+<!-- Mailchimp Newsletters -->
 <div id="newsletter-signup" class="newsletter-banner">
     <div class="newsletter-content">
         <button id="close-newsletter" class="close-btn" onclick="toggleNewsletter()">&times;</button>
         <div class="newsletter-flex">
-            <h2>STAY UPDATED ! SUBSCRIBE TO GET NEWS FROM ME</h2>
+            <h2>Subscribe to get news from me!</h2>
             <div class="form-container">
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSeuMLznMLG2-4Jt0ERad19ZL_kO-gQT4HkvTCFAE7HE1iIlew/formResponse" 
-                      method="post" 
+                <form 
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSeuMLznMLG2-4Jt0ERad19ZL_kO-gQT4HkvTCFAE7HE1iIlew/formResponse"
+                      method="post"
                       target="_blank"
                       id="subscribe-form"
                       onsubmit="return handleSubmit(event);">
                     <div class="input-group">
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             id="email-input"
                             name="entry.1452026899"
-                            placeholder="Your email address" 
+                            placeholder="Your email address"
                             required
                         >
                         <button type="submit" class="submit-btn">Subscribe</button>
@@ -36,7 +37,7 @@
         background: rgba(255, 181, 8, 0.95);
         backdrop-filter: blur(10px);
         z-index: 1000;
-        padding: 0.5rem;
+        padding: 0.2rem;
         box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease-in-out;
     }
@@ -56,7 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 0rem;
     }
 
     .close-btn {
@@ -152,53 +153,6 @@
         display: none;
     }
 
-    @media (max-width: 768px) {
-        .newsletter-flex {
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: stretch;
-        }
-
-        #newsletter-signup h2 {
-            font-size: 0.9rem;
-            text-align: center;
-            white-space: normal;
-        }
-
-        .newsletter-content {
-            padding: 0 0.5rem;
-        }
-
-        .input-group {
-            flex-direction: column;
-        }
-
-        .submit-btn {
-            width: 100%;
-        }
-
-        .close-btn {
-            top: -5px;
-            right: 0;
-        }
-
-        .form-container {
-            width: 100%;
-        }
-
-        #email-input {
-            width: 100%;
-            height: 36px;
-            font-size: 15px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            height: 36px;
-            font-size: 15px;
-        }
-    }
-
     /* Add margin to main content to prevent overlap */
     body {
         margin-bottom: 60px;
@@ -208,6 +162,52 @@
         body {
             margin-bottom: 120px;
         }
+
+        .newsletter-flex {
+            /* Stacking the heading above the form */
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        #newsletter-signup h2 {
+            font-size: 0.85rem;
+            text-align: center;
+            white-space: normal;
+        }
+
+        .newsletter-content {
+            padding: 0 0.5rem;
+        }
+
+        /* Keep input and button side-by-side, but make them smaller */
+        .input-group {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        #email-input {
+            width: 180px;
+            height: 30px;
+            font-size: 12px;
+        }
+
+        .submit-btn {
+            padding: 4px 12px;
+            font-size: 12px;
+            height: 30px;
+        }
+
+        .form-container {
+            width: auto;
+        }
+
+        .close-btn {
+            top: -5px;
+            right: 0;
+        }
     }
 </style>
 
@@ -215,18 +215,18 @@
 function handleSubmit(event) {
     const form = document.getElementById('subscribe-form');
     const status = document.getElementById('form-status');
-    
+
     status.textContent = 'Subscribing...';
-    
+
     let iframe = document.querySelector('iframe[name="hidden_iframe"]');
     if (!iframe) {
         iframe = document.createElement('iframe');
         iframe.name = 'hidden_iframe';
         document.body.appendChild(iframe);
     }
-    
+
     form.target = 'hidden_iframe';
-    
+
     setTimeout(() => {
         status.textContent = 'Thanks for subscribing!';
         form.reset();
@@ -235,14 +235,14 @@ function handleSubmit(event) {
             document.getElementById('newsletter-signup').classList.add('hidden');
         }, 3000);
     }, 1000);
-    
+
     return true;
 }
 
 function toggleNewsletter() {
     const banner = document.getElementById('newsletter-signup');
     banner.classList.toggle('hidden');
-    
+
     if (banner.classList.contains('hidden')) {
         localStorage.setItem('newsletterHidden', 'true');
     } else {
