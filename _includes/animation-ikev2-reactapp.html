@@ -1,0 +1,53 @@
+<!-- React App Container -->
+<div class="react-app-wrapper" style="position: relative; z-index: 1; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); width: 100vw;">
+    <iframe 
+        id="ikev2-animation-frame"
+        srcdoc="
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset='utf-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                <title>IKEv2 Animation</title>
+                <base href='{{ site.baseurl }}/assets/animations-react-apps/ikev2-react-app/'>
+                <link rel='stylesheet' href='static/css/main.e4d51567.css'>
+                <style>
+                    body { margin: 0; padding: 0; overflow: hidden; }
+                    #root { min-height: 90vh; height: 100%; }
+                </style>
+            </head>
+            <body>
+                <div id='root'></div>
+                <script src='static/js/488.781a4abc.chunk.js'></script>
+                <script src='static/js/main.d1850b69.js'></script>
+            </body>
+            </html>
+        "
+        style="width: 100%; height: 150vh; min-height: 80vh; border: none; display: block; background: transparent;"
+        scrolling="no"
+        frameborder="0"
+        allowtransparency="true"
+    ></iframe>
+</div>
+
+<style>
+    .react-app-wrapper {
+        width: 90%;
+        margin: auto;
+        overflow-x: hidden;
+        min-height: 90vh;
+        position: relative;
+        margin-top: calc(1vh + 20px); /* Responsive margin using viewport height, abde : controls space under banner'*/
+    }
+    
+     
+    .react-app-wrapper iframe {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+        .react-app-wrapper {
+            margin-top: calc(0.5vh + 20px); /* Smaller spacing under banner on mobile */
+        }
+    }
+</style>

@@ -1,13 +1,13 @@
 ---
 layout: animation
-title: "TLS 1.3 (RFC 8446) in motion!"
-summary: "Explore an interactive TLS 1.3 handshake animation powered by React and D3.js"
+title: "IKEv2 Animation (RFC 7296) in motion!"
+summary: "Explore an interactive IKEv2 animation by Abde"
 author: abde
 date: '2025-01-21 14:35:23 +0530'
 category: animation
 thumbnail: /assets/img/posts/2025-01-21-tls-animation/tls-animation-thumbnail.jpeg
 keywords: tls1.3, handshake, animation, interactive, security
-permalink: /blog/tls-1-3-interactive-animation/
+permalink: /blog/ikev2-interactive-animation/
 usemathjax: false
-react_include: animation-tls1-3-react-app.html
+react_include: animation-ikev2-reactapp.html
 ---
