@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YaBilal: Combining PCB Design, MCU Coding, and AWS IoT"
+title:  "YaBilal.nl : Combining PCB Design, MCU Coding, and AWS IoT"
 summary: "How I built a device that precisely matches mosque prayer times using cutting-edge tech"
 author: abde
 date: '2021-03-10 10:00:00 +0100'
