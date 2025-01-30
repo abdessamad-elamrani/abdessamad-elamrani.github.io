@@ -1,6 +1,6 @@
 ---
 layout: animation
-title: "BGP (Border Gateway Protocol) in motion!"
+title: "BGP (RFC 4271) in motion!"
 summary: "Explore an interactive BGP protocol animation powered by React and D3.js"
 author: abde
 date: '2021-02-03 14:35:23 +0530'
