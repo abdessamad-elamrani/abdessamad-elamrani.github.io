@@ -1,6 +1,6 @@
 ---
 layout: animation
-title: "IKEv2 Animation (RFC 7296) in motion!"
+title: "IPSEC (IKEv2 RFC 7296) in motion!"
 summary: "Explore an interactive IKEv2 animation by Abde"
 author: abde
 date: '2025-01-21 14:35:23 +0530'
