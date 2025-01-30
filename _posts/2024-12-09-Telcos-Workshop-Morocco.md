@@ -13,7 +13,7 @@ usemathjax: true
 
 `Great Workshops for INWI & Orange telcos in Morocco`
 
-I'm happy to share about the amazing workshops we recently held in Morocco. My colleague and friend Kim Frellsen joined me as we met with teams from INWI and Orange, along with our local Fortinet team. Together, we explored some really exciting developments in technology and security.
+I'm happy to share about the amazing workshops we recently held in Morocco. My amazing colleague Kim Frellsen joined me as we met with teams from INWI and Orange, along with our  great local Fortinet team. Together, we explored some really exciting developments in technology and security.
 
 ## 5G Security: Building a Safer Future
 
