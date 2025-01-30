@@ -13,11 +13,11 @@ usemathjax: true
 
 `Reflecting on the incredible workshops I held in Morocco for Inwi, Orange, and local Fortinet teams`
 
-I am delighted to reflect on the incredible workshops held in Morocco, alongside my esteemed colleague, Kim Frellsen. Together, we had the privilege of engaging with leading Moroccan telecom operators : INWI and Orange, as well as local fortinet teams to  explore the forefront of technological innovation and security.
+I am delighted to reflect on the incredible workshops held in Morocco, alongside my esteemed colleague the great Kim Frellsen. Together, we had the privilege of engaging with leading Moroccan telecom operators : INWI and Orange, as well as local fortinet teams to  explore the forefront of technological innovation and security.
 
 ## 5G Security: Building a Safer Future
 
-As the telecom industry embraces 5G, the security landscape becomes both more complex and more critical. In these sessions, we highlighted:
+As the telecom industry embraces 5G, the security landscape becomes both more complex and more critical. Kim opened our pitches and highlighted:
 
 The unique security challenges posed by 5G networks, including increased attack surfaces
 
@@ -27,13 +27,9 @@ How Fortinet’s advanced security solutions deliver unparalleled protection for
 
 ## Deep Packet Inspection (DPI): Insights into Network Traffic
 
-DPI remains a vital tool for telecom operators, enabling better traffic management, enhanced quality of service, and advanced threat detection. We discussed:
+I had privilege to dive into latest TLS advancements and challenges with DPI for telecom operators, you can get an idea about those challenges looking at webfiltering writeup, or tls ech animation..
 
-Innovations in DPI technology for real-time traffic analysis
-
-Use cases for DPI in improving network performance and detecting malicious activity
-
-Integration strategies with existing telco infrastructures
+I want be able to develop more since the remaining part is as of know propriatry Fortinet solution.
 
 ## Quantum Computing and Cryptography: Preparing for the Next Era
 
@@ -43,7 +39,7 @@ The current state of quantum computing and its anticipated breakthroughs
 
 The impact on cryptography, including the vulnerabilities of traditional encryption methods
 
-Strategies for transitioning to quantum-resistant cryptographic algorithms
+Strategies for transitioning to quantum-resistant cryptographic algorithms.
 
 ## Fortinet: A Trusted Partner in Security
 
