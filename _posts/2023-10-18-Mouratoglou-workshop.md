@@ -23,17 +23,5 @@ I am grateful for the opportunity to have been part of such a dynamic and forwar
 
 <div style="text-align: center;">
   <img src="/assets/img/posts/2023-10-18-Mouratoglou-workshop/Day1-Abde_1.jpeg" alt="Going through some deep kernel traffic gen techniques" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">Going through some deep Fortigate flows</p>
+  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;"></p>
 </div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-10-18-Mouratoglou-workshop/Day1-Abde_2.jpeg" alt="netmap & dpdk and kernel recomplication" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">Going through some deep Fortigate flows</p>
-</div>
-
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-10-18-Mouratoglou-workshop/Day1-Audience.jpeg" alt="netmap & dpdk and kernel recomplication" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">Going through some deep Fortigate flows</p>
-</div>
-

@@ -5,7 +5,7 @@ summary: "AI & CyberSec in Finance and Energy Sector, Amsterdam June 2023 , The 
 author: abde-energy-event
 date: '2023-06-05 14:35:23 +0530'
 category: events
-thumbnail: /assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_03.jpg
+thumbnail: /assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_05.jpg
 keywords: telco, 5g, security, 
 permalink: /blog/AIinEnergySector/
 usemathjax: true
@@ -27,26 +27,3 @@ A key focus was on the residential sector, where substantial energy waste occurs
 Furthermore, I addressed the energy dilemma associated with AI, emphasizing the environmental concerns of training large-scale AI models. I discussed the role of hyperscale data centers and the need for balancing technological advancement with sustainability.
 The event was a fantastic opportunity to connect with fellow technologists and share my vision for a more sustainable future powered by AI and IoT. I am grateful for the chance to contribute to this important dialogue and look forward to continuing to drive innovation in this space.
 For more details on my work and insights, feel free to visit my LinkedIn profile or my personal website.
-
-`here are pictures from the event`
-
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_04.jpg" alt="Going through some deep Fortigate flows" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;"></p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_01.jpg" alt="Internal QoS and chips" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em;  padding: 5px; display: inline-block;"></p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_03.jpg" alt="More QoS" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;"></p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2023-06-05-AI-and-Security-in-Firance&Energy/Image_AS_E_05.jpg" alt="Leaving Nice Airport right before return flight, with my colleague Adel" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;"></p>
-</div>
