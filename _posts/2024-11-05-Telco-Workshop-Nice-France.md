@@ -11,49 +11,18 @@ permalink: /blog/telco-workshop-nice-2024/
 usemathjax: true
 ---
 
-`Empowering Telco System Engineer Champions: Highlights from Our Annual Workshop`
+`Learning and Sharing at Our Annual Telco Workshop`
 
-Every year, we gather for our much-anticipated Telco workshop, a pivotal event designed to equip our Telco SE champions with the latest insights and advancements in Telco Security. This year was no exception, and I had the privilege of leading some in-depth sessions on critical topics, including the often-overlooked gray areas of Quality of Service (QoS) and solutions validation.
+It's always exciting when we get together for our yearly Telco workshop! This time around, I had the chance to share some really interesting topics with our Telco SE team, especially diving into some tricky areas like Quality of Service (QoS) and how we test our solutions.
 
-Here are some of the main topics I wanted to highlight
+Here are the cool things we covered:
 
-## Session1: Telco and QoS challenges
+## Session 1: Making Sense of Telco and QoS Challenges
 
-The session on QoS was particularly rewarding. We delved into complex traffic flows, explored the intricacies of chip-level processes, we also tackled kernel QoS, design strategies, and common pitfalls. 
+The QoS session was really fun and packed with useful information. We got into the nitty-gritty of traffic flows and how things work at the chip level, plus we looked at kernel QoS, how to design it right, and what problems to watch out for.
 
-The Fortinet System Engineers were highly engaged, peppering me with questions throughout the session. What truly stood out was the overwhelming response afterward—many engineers approached me to discuss their challenging QoS projects  in the Telco market or upcoming initiatives that needed to address QoS issues. This enthusiasm has inspired me to consider writing a more  internal comprehensive document on the subject.
+I loved how engaged everyone was - there were lots of great questions throughout! What made me really happy was how many engineers came up to me afterward to talk about their QoS projects in the Telco market. Seeing all this interest has got me thinking about writing a more detailed internal guide about it.
 
-## Session2: Fortinet solutions validation and return on experience
+## Session 2: Real-World Experience with Fortinet Solutions
 
-The solutions validation session was equally exciting. I had the pleasure of collaborating as speaker with Simon Bryden, who shared brilliant insights from our experiences in solutions validation and testing. We concluded the discussion with some entertaining anecdotes from the field, providing a light-hearted yet informative end to the workshop.
-
-Below are some photos capturing the energy and engagement of the event.
-
-I blured parts of the pic that might have some internal FTNT info
-
-## Session3: cFOS in standalone docker and Kubernetes
-
-This wasnt a one I gave directly, but I tried to actively participate and help audience with the brilliant handson lab done by Kim Frellesen, the session highlights the latest containernised Fortinet solution (cFOS) aka container Fortigate, in typical docker or kubernetes deployements..
-
-
-`here are pictures from the event, internal infos on slides are blured, and last pic is right before our return flight to Amsterdam from Nice with my colleague and good friend Adel El Adham`
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2024-11-05-Telco-Workshop-Nice-France/pic1.jpeg" alt="Going through some deep Fortigate flows" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">Going through some deep Fortigate flows</p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2024-11-05-Telco-Workshop-Nice-France/pic2.jpeg" alt="Internal QoS and chips" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em;  padding: 5px; display: inline-block;">Internal QoS and chips</p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2024-11-05-Telco-Workshop-Nice-France/pic3.jpeg" alt="More QoS" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">More QoS internal flows</p>
-</div>
-
-<div style="text-align: center;">
-  <img src="/assets/img/posts/2024-11-05-Telco-Workshop-Nice-France/pic4.jpeg" alt="Leaving Nice Airport right before return flight, with my colleague Adel" class="img-fluid">
-  <p style="font-weight: bold; font-size: 1.5em; padding: 5px; display: inline-block;">Leaving Nice Airport right before return flight, with my colleague Adel</p>
-</div>
+For the solutions testing session, I joined my manager, Simon Bryden, we had a great time sharing what we've learned from testing and validating solutions in the real world. We wrapped up with some funny stories from our field experiences, which was a nice way to end things on a lighter note.
